@@ -1,0 +1,119 @@
+.login {
+    min-height: 700px;
+    padding: 50px;
+}
+
+.login-form{
+    max-width: 580px;
+    width: 100%;
+    padding: 32px 65px;
+    border-radius: .75rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+}
+
+.input-field{
+    position: relative;
+}
+
+.input-field input{
+    width: 100%;
+    padding-left: 45px !important;
+}
+
+.input-field .i-envelope {
+    position: absolute;
+    padding-left: 15px;
+    top: 18px;
+}
+
+.input-field span .i-wrong {
+    position: absolute;
+    padding-left: 15px;
+    top: -45px;
+    right: 12px;
+    color: red;
+    font-size: 1.2rem;
+}
+
+.input-field span .i-right {
+    position: absolute;
+    padding-left: 15px;
+    top: -45px;
+    right: 12px;
+    color: green;
+    font-size: 1.2rem;
+}
+
+.input-field .i-key {
+    position: absolute;
+    padding-left: 15px;
+    top: 23px;
+}
+
+.input-field .i-user {
+    position: absolute;
+    padding-left: 15px;
+    top: 23px;
+}
+
+.signin-btn {
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.25rem;
+    padding: 0.75rem 2rem;
+    color: rgba(255,255,255, 1);
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 4px;
+    background-color: #25262B;
+    font-size: 1.125rem;
+}
+
+.social-login{
+}
+
+.social-login button{
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    box-sizing: border-box;
+    border-radius: 57px;
+    padding: 10px 30px;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .login {
+        padding: 10px;
+    }
+
+    .login-form {
+        padding: 25px 20px;
+    }
+}
+  
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .login-form {
+        max-width: 480px;
+    }
+  }
+  
+  /* Medium devices(sm) (tablets, 768px and up) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .login-form {
+        max-width: 480px;
+    }
+  }
+  
+  /* Large devices(md) (desktops, 992px and up) */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .login-form {
+        max-width: 480px;
+    }
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    
+  }
+  

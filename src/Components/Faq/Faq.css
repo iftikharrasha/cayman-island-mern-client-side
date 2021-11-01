@@ -1,0 +1,73 @@
+#faq-btn {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    border: none;
+    width: 100%;
+    text-align: left;
+    color: #2D2E2F;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+  }
+  
+  #faq-btn.active {
+    background-color: #C4E7C9;
+    color: #2D2E2F;
+    border: #C4E7C9 solid 1px;
+  }
+  
+  #faq-btn:hover {
+      background-color: #ededed;
+  }
+  
+  .title-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+  
+  .minus {
+    content: url('../../img/minus.svg');
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+  }
+  
+  .plus {
+    content: url('../../img/plus.svg');
+    width: 24px;
+    height: 24px;
+    transform: rotate(90deg);
+    transition-timing-function: ease-in;
+    transition: all 1s;
+    position: absolute;
+    right: 0;
+  }
+  
+  .panel-close {
+    box-sizing: border-box;
+    padding: 0.5rem 1rem 0 1rem;
+    opacity:0;
+    width:100%;
+    height:0;
+    overflow: hidden;
+    transition-timing-function: ease-out;
+    transition: all 1s;
+  }
+  
+  .panel-open {
+    overflow: hidden;
+    background: #CCDEE2;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    opacity:1;
+    width:100%;
+    height: auto;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+  }

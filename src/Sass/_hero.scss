@@ -1,0 +1,46 @@
+.hero{
+    margin-top: 6rem;
+    background-image: url(../img/banner.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    .hero--top{
+        @include flexCenter;
+        min-height: 55rem;
+        .top{
+            width: 65%;
+            margin-bottom: 30rem;
+            @media (max-width: 575.98px) {
+                width: 90%;
+            }
+            
+            @media (min-width: 576px) and (max-width: 767.98px) {
+                width: 85%;
+            }
+            
+            @media (min-width: 768px) and (max-width: 991.98px) {
+                width: 85%;
+            }
+            h1{
+                color: $color_white;
+                @media (max-width: 575.98px) {
+                    font-size: 2rem;
+                }
+                span{
+                    color: $color_darkblue;
+                }
+            }
+            p{
+                color: $color_white;
+                @media (max-width: 575.98px) {
+                    font-size: 1rem;
+                }
+                span{
+                    color: $color_purple;
+                    border-bottom: .1rem solid $color_purple;
+                }
+            }
+        }
+    }
+}

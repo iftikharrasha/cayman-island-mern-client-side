@@ -1,0 +1,23 @@
+.header{
+    background-color: $color_white;
+    transition: all 0.5s ease 0s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    .c--custom {
+        max-width: 88rem;
+    }
+    .header--nav{
+        #brand{
+            width: 16rem;
+        }
+        .menu{
+            justify-content: space-evenly;
+            a{
+                color: $color_black;
+            }
+        }
+    }
+}

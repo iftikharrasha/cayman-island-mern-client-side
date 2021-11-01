@@ -1,0 +1,192 @@
+@import './variables';
+@import './header';
+@import './hero';
+@import './services';
+@import './offers';
+@import './footer';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    @media (max-width: 575.98px) {
+        font-size: 12px;
+    }
+    @media (min-width: 576px) and (max-width: 767.98px){
+        font-size: 12px;
+    }
+    @media (min-width: 768px) and (max-width: 991.98px){
+        font-size: 12px;
+    }
+    @media (min-width: 992px) and (max-width: 1299.98px){
+        font-size: 12px;
+    }
+    @media (min-width: 1300px) and (max-width: 1531.98px){
+        font-size: 13px;
+    }
+}
+
+body {
+    font-family: $font1;
+    background-color: $color_white;
+    color: $color_black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.3s ease-in-out;
+}
+
+.overflowX {
+	overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	margin:0;
+	padding:0;
+}
+
+ul{
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+
+a{
+	margin:0;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+a, select , input , textarea , button{
+	outline: none !important;
+}
+
+.btn:focus, .btn.focus, .form-control:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn-link:focus, .btn-link.focus {
+    text-decoration: none;
+}
+
+/*fonts*/
+.lit--12{
+    font-family: $font2;
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+
+.lit--16{
+    font-family: $font2;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.lit--20{
+    font-family: $font2;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.lit--22{
+    font-family: $font2;
+    font-size: 1.375rem;
+    font-weight: 300;
+}
+
+.bold--13{
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+.bold--14{
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.bold--15{
+    font-size: 0.9375rem;
+    font-weight: 700;
+}
+
+.bold--16{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.bold--17{
+    font-size: 1.0625rem;
+    font-weight: 700;
+}
+
+.bold--18{
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.bold--20{
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.bold--22{
+    font-size: 1.375rem;
+    font-weight: 700;
+}
+
+.bold--24{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.bold--26{
+    font-size: 1.625rem;
+    font-weight: 700;
+}
+
+.bold--28{
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.bold--30{
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.bold--40{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.bold--55{
+    font-size: 3.4375rem;
+    font-weight: 700;
+}
+
+.c--custom {
+    max-width: 81.25rem;
+}
+
+/* button */
+.btn-tag-1 {
+    background: $color_purple;
+    color: $color_white !important;
+    padding: 0.8rem 2rem;
+    border-radius: .5rem;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.btn-tag-1:hover {
+    background-image: linear-gradient(#171717, #262626);
+    color:$color_white;
+}

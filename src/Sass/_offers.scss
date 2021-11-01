@@ -1,0 +1,97 @@
+.offers{
+    .c--custom {
+        max-width: 88rem;
+    }
+    .offer--cards{
+        margin: 3rem 0;
+        @include flexCenter;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media (max-width: 575.98px) {
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            flex-wrap: wrap;
+        }
+        .card--single{
+            width: 28%;
+            border-radius: 1.5rem;
+            text-align: center;
+            padding: 5rem 3rem 5rem 3rem;
+            position: relative;
+            box-shadow: 0px 0px 45px -35px #5e1ba4;
+            margin-bottom: 4rem;
+            @media (max-width: 575.98px) {
+                width: 75%;
+                margin: 0 auto;
+            }
+            
+            @media (min-width: 576px) and (max-width: 767.98px) {
+                width: 35%;
+                margin: 0 auto;
+            }
+            
+            @media (min-width: 768px) and (max-width: 991.98px) {
+                width: 35%;
+                margin: 0 auto;
+            }
+            @media (max-width: 320px) {
+                width: 90%;
+            }
+            @media (min-width: 321px) and (max-width: 376px) {
+                width: 80%;
+            }
+            .card--img{
+                @include flexCenter;
+                background-color: $color_lightblue;
+                height: 7.5rem;
+                width: 7.5rem;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            button{
+                background: $color_purple;
+                padding: .8rem 2rem;
+                border-radius: 2rem;
+                position: absolute;
+                bottom: 1rem;
+                margin-left: auto;
+                margin-right: auto;
+                left: 50%;
+                right: 50%;
+                text-align: center;
+                transform: translateX(-50%);
+                opacity: 0;
+                width: 15rem;
+                transition: all 0.3s ease-in-out;
+                a{
+                    color: $color_darkblue;
+                    span{
+                        img{
+                            transition: all .3s ease-in-out;
+                            width: 2.5rem;
+                        }
+                    }
+                    &:hover{
+                        span{
+                            img{
+                                transform: translateX(1rem);
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover{
+                button {
+                    bottom: -2rem;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

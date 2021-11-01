@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'NexaBold';
+    src: url('../fonts/Nexa-Bold.otf');
+}
+
+@font-face {
+    font-family: 'NexaLight';
+    src: url('../fonts/Nexa-Light.otf');
+}
+
+:root {
+    --color_white: #FFFFFF;
+    --color_green: #03C952;
+    --color_red: #E90000;
+    --color_purple: #9994F0;
+    --color_lightblue: #343075;
+    --color_blue: #130035;
+    --color_darkblue: #12002A;
+    --color_black: #000000;
+
+    --font1: 'NexaBold', sans-serif;
+    --font2: 'NexaLight', sans-serif;
+}
+
+$color_white: var(--color_white);
+$color_green: var(--color_green);
+$color_red: var(--color_red);
+$color_purple: var(--color_purple);
+$color_lightblue: var(--color_lightblue);
+$color_blue: var(--color_blue);
+$color_darkblue: var(--color_darkblue);
+$color_black: var(--color_black);
+
+$font1: var(--font1);
+$font2: var(--font2);
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
