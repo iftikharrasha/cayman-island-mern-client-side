@@ -27,9 +27,6 @@ const Services = () => {
                                                         <span className="ml-2 lit--20">{service.title}</span> 
                                                     </p>
                                                 </div>
-                                                <Link to={`/service-search/${service.route}`}>
-                                                    <button className="btn btn-tag-1 mt-3">Read More</button>
-                                                </Link>
                                             </div>
                                         </div>
                                     </Col>

@@ -1,0 +1,22 @@
+.intro{
+    .thumb--video{
+        .video--button{
+            background-color: $color_white;
+            border: none;
+            .play--button {
+                position: absolute;
+                width: 5rem;
+                height: 5rem;
+                border-radius: 50%;
+                background: rgba(179, 182, 200, 0.51);
+                transition: .3s all ease;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            img{
+                border-radius: 1rem;
+            }
+        }
+    }
+}

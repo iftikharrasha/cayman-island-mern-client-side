@@ -53,20 +53,43 @@ const Header = () => {
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/faq">FAQ</Nav.Link>
                                     {
                                     loggedInUser.isSignedIn ? <Dropdown>
-                                                                <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center">
-                                                                    <span className="avatar mr-2">
-                                                                        <img alt={loggedInUser.name} src={loggedInUser.photo}/>
-                                                                    </span>
-                                                                    <span className="mb-0">{loggedInUser.name}</span>
+                                                                <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center mr-lg-4">
+                                                                    <i class="fa-solid fa-cart-arrow-down"></i>
                                                                 </Dropdown.Toggle>
 
                                                                 <Dropdown.Menu>
                                                                     <Link to="/ride-search" className="dropdown-item lit--16">Find Ride</Link>
+                                                                    <Link to="/ride-search" className="dropdown-item lit--16">Find Ride</Link>
+                                                                    <Link to="/ride-search" className="dropdown-item lit--16">Find Ride</Link>
+                                                                </Dropdown.Menu>
+                                                            </Dropdown> :
+                                                            <Dropdown>
+                                                                <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center mr-lg-4">
+                                                                    <i class="fa-solid fa-cart-arrow-down"></i>
+                                                                </Dropdown.Toggle>
+
+                                                                <Dropdown.Menu>
+                                                                    <p to="/ride-search" className="dropdown-item lit--16">Your Cart is Empty! <br /> Please login.</p>
+                                                                </Dropdown.Menu>
+                                                            </Dropdown>
+                                    }
+                                    {
+                                    loggedInUser.isSignedIn ? <Dropdown>
+                                                                <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center">
+                                                                    <span className="avatar mr-2">
+                                                                        <img alt={loggedInUser.name} src={loggedInUser.photo}/>
+                                                                    </span>
+                                                                    <span className="mb-0 bold--17">{loggedInUser.name}</span>
+                                                                </Dropdown.Toggle>
+
+                                                                <Dropdown.Menu>
+                                                                    <Link to="/ride-search" className="dropdown-item lit--16">Manage Orders</Link>
                                                                     <Link to="/" className="dropdown-item lit--16" onClick={handleSignOut}>Sign Out</Link>
                                                                 </Dropdown.Menu>
                                                             </Dropdown> : 
                                                             <Link to="/login" className="btn-tag-1 bold--16"><i className="fa fa fa-user"></i><span className="ml-2">Login</span></Link>
                                     }
+                                    
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>

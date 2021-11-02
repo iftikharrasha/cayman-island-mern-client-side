@@ -24,8 +24,12 @@
             text-align: center;
             padding: 5rem 3rem 5rem 3rem;
             position: relative;
-            box-shadow: 0px 0px 45px -35px #5e1ba4;
             margin-bottom: 4rem;
+            border: 1px solid #eee;
+            &:hover{
+                border: 1px solid transparent;
+                box-shadow: 0 5px 50px rgba(129,74,255,0.2);
+            }
             @media (max-width: 575.98px) {
                 width: 75%;
                 margin: 0 auto;
@@ -48,29 +52,28 @@
             }
             .card--img{
                 @include flexCenter;
-                background-color: $color_lightblue;
-                height: 7.5rem;
-                width: 7.5rem;
-                border-radius: 50%;
-                margin: 0 auto;
+                background: #f7f9fd;
+                padding: 40px;
             }
             button{
-                background: $color_purple;
+                background: $color_white;
                 padding: .8rem 2rem;
                 border-radius: 2rem;
                 position: absolute;
-                bottom: 1rem;
+                border: 1px solid $color_pink;
+                bottom: -2rem;
                 margin-left: auto;
                 margin-right: auto;
                 left: 50%;
                 right: 50%;
                 text-align: center;
                 transform: translateX(-50%);
-                opacity: 0;
                 width: 15rem;
                 transition: all 0.3s ease-in-out;
                 a{
-                    color: $color_darkblue;
+                    background-image: linear-gradient(to right,#ff2f8b,#9035f9);
+                    color: transparent;
+                    background-clip: text;
                     span{
                         img{
                             transition: all .3s ease-in-out;
@@ -78,18 +81,13 @@
                         }
                     }
                     &:hover{
+                        color: $color_purple;
                         span{
                             img{
                                 transform: translateX(1rem);
                             }
                         }
                     }
-                }
-            }
-            &:hover{
-                button {
-                    bottom: -2rem;
-                    opacity: 1;
                 }
             }
         }

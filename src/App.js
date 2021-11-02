@@ -10,6 +10,7 @@ import Header from './Components/Header/Header.js';
 import Hero from './Components/Hero/Hero.js';
 import Services from './Components/Services/Services.js';
 import Offers from './Components/Offers/Offers.js';
+import Intro from './Components/Intro/Intro.js';
 
 import Login from './Components/Login/Login.js';
 import SignUp from './Components/SignUp/SignUp.js';
@@ -20,7 +21,6 @@ import Contact from './Components/Contact/Contact.js';
 import NotFound from './Components/NotFound/NotFound.js';
 import Faq from './Components/Faq/Faq.js';
 import About from './Components/About/About.js';
-import BigImg from './Components/BigImg/BigImg.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sass/style.css';
 
@@ -65,13 +65,13 @@ function App() {
                                             <Hero/>
                                             <Services/>
                                             <Offers/>
-                                            <BigImg></BigImg>
+                                            <Intro/>
+
                                             <Footer></Footer>
                                         </Route>
                                         <Route path="/home">
                                             <Header/>
                                             <Hero/>
-                                            <BigImg></BigImg>
                                             <Footer></Footer>
                                         </Route>
                                         <Route path="/login">

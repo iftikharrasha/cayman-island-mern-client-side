@@ -1,14 +1,24 @@
 .footer{
-    background: $color_blue;
-    .footer--contact{
-        padding: 5rem 0 7rem 0;
-        background: $color_darkblue;
-        .c--custom--2 {
-            max-width: 88rem;
+    background-color: $color_white;
+    .footer--counter{
+        background-color: $color_purple;
+        width: 60%;
+        margin: 0 auto;
+        border-radius: .5rem;
+        position: relative;
+        bottom: 4rem;
+        @media (max-width: 575.98px) {
+            width: 95%;
         }
-        .contact--title{
-            h2, p{
-                color: $color_white;
+        .footer--contact{
+            padding: 1rem;
+            .c--custom--2 {
+                max-width: 88rem;
+            }
+            .contact--title{
+                h2, p{
+                    color: $color_white;
+                }
             }
         }
         .contact--info{
@@ -22,56 +32,11 @@
             }
         }
     }
-    .footer--counter{
-        background-color: $color_blue;
-        width: 60%;
-        margin: 0 auto;
-        border-radius: .5rem;
-        position: relative;
-        bottom: 4rem;
-        padding-top: 1.5rem;
-        @media (max-width: 575.98px) {
-            width: 95%;
-        }
-        .counter--single{
-            @include flexCenter;
-            p{
-                color: $color_white;
-                @media (max-width: 575.98px) {
-                    font-size: 1.25rem;
-                }
-                @media (min-width: 576px) and (max-width: 991.98px) {
-                    font-size: 1.5rem;
-                }
-            }
-        }
-        #counter01{
-            border-right: 1px solid $color_white;
-        }
-        #counter02{
-            border-right: 1px solid $color_white;
-            border-left: 1px solid $color_white;
-        }
-        #counter03{
-            border-left: 1px solid $color_white;
-        }
-    }
     .footer--contents{
         @include flexCenter;
         padding: 0 0 2.5rem 0;
         @media (max-width: 991.98px) {
             flex-direction: column;
-        }
-        .footer--icons{
-            position: absolute;
-            left: 5%;
-            @media (max-width: 991.98px) {
-                position: static;
-                margin-bottom: 2rem;
-            }
-            img{
-                margin-right: 1rem;
-            }
         }
         .footer--copyright{
             text-align: center;
@@ -79,7 +44,10 @@
                 width: 35%;
             }
             p{
-                color: $color_white;
+                color: $color_black;
+                i{
+                    color: $color_pink;
+                }
             }
         }
     }
