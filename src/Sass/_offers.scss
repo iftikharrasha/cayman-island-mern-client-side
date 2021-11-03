@@ -92,4 +92,18 @@
             }
         }
     }
+    .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 4.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .fc-input {
+        padding-left: 3.375rem;
+    }
 }

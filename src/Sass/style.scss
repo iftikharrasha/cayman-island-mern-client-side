@@ -3,9 +3,16 @@
 @import './hero';
 @import './services';
 @import './offers';
+@import './offerdetails';
+@import './orders';
+@import './placeorder';
 @import './login';
 @import './intro';
+@import './faq';
+@import './about';
 @import './footer';
+@import './notfound';
+@import './pagination';
 
 * {
     margin: 0;
@@ -193,21 +200,4 @@ a, select , input , textarea , button{
     color:$color_white;
 }
 
-.big-img{
-    @include flexCenter;
-    background: url(../img/beach.webp) no-repeat 50%;
-    background-size: cover;
-    width: 100%;
-    min-height: 55rem;
-    -webkit-filter: brightness(70%);
-    filter: brightness(70%);
-    margin-top: 5rem;
-}
 
-.big-img h2 {
-    font-size: 5rem;
-    line-height: .9;
-    text-transform: uppercase;
-    font-family: "Playfair Display",serif;
-    color: $color_pink;
-}

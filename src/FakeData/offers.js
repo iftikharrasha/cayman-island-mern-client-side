@@ -8,7 +8,8 @@ import care from '../img/care.png';
 export const offers = [
     {
         id: 1,
-        name: "Camping",
+        key: "HWEW3003HY",
+        category: "Camping",
         title: "Amazing Tours And Fun Adventures Waiting For You",
         icon: care,
         img: protectionImg,
@@ -16,7 +17,8 @@ export const offers = [
     },
     {
         id: 2,
-        name: "Popular",
+        key: "CWEW1233OY",
+        category: "Popular",
         title: "Choose The Destination Just Right For Your Vacation",
         icon: implants,
         img: implantsImg,
@@ -24,7 +26,8 @@ export const offers = [
     },
     {
         id: 3,
-        name: "Beaches",
+        key: "K1EW3099HY",
+        category: "Beaches",
         title: "Special Deals And Last Minute Amazing Offers",
         icon: protection,
         img: careImg,
@@ -32,7 +35,8 @@ export const offers = [
     },
     {
         id: 4,
-        name: "Camping",
+        key: "TWEW3403HB",
+        category: "Camping",
         title: "Amazing Tours And Fun Adventures Waiting For You",
         icon: care,
         img: protectionImg,
@@ -40,7 +44,8 @@ export const offers = [
     },
     {
         id: 5,
-        name: "Popular",
+        key: "BWEW3043HC",
+        category: "Popular",
         title: "Choose The Destination Just Right For Your Vacation",
         icon: implants,
         img: implantsImg,
@@ -48,7 +53,8 @@ export const offers = [
     },
     {
         id: 6,
-        name: "Beaches",
+        key: "AWEW1003HT",
+        category: "Beaches",
         title: "Special Deals And Last Minute Amazing Offers",
         icon: protection,
         img: careImg,

@@ -6,8 +6,8 @@ const Footer = () => {
     return (
         <>
             <footer className="footer" id="footer">
-                <div className="big-img">
-                    <h2 class="bold-140"><span>CAYMAN ISLAND</span></h2>
+                <div className="footer--img">
+                    <h2 className="bold-140"><span>CAYMAN ISLAND</span></h2>
                 </div>
                 <Container className="c--custom">
                     <div className="footer--counter">
@@ -16,9 +16,7 @@ const Footer = () => {
                                 <div className="footer--contact">
                                     <div className="contact--title text-center">
                                         <h2 className="bold--26 mb-4">
-                                            <div className="line-1"><span></span></div>
-                                                <span className="px-4">Contact Us</span>
-                                            <div className="line-2"><span></span></div>
+                                            <span className="px-4">Contact Us</span>
                                         </h2>
                                         <p className="lit--16">Get in touch with us! We never contact you first and our support team is only available via Telegram. Contact ONLY @michaelrankup on Telegram for any questions or inquiries.</p>
                                     </div>

@@ -2,9 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import facebook from '../../img/facebook.svg';
 import google from '../../img/google.svg';
-import './SignUp.css';
 
 import firebase from "firebase/compat/app";
 import {UserContext} from "../../App";

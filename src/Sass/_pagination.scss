@@ -1,0 +1,57 @@
+.page-ul {
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.page-ul li {
+    list-style: none;
+    line-height: 50px;
+    margin: 0 5px;
+}
+
+.page-ul li.pageNumber {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+  
+  .page-ul li .pageNumber a {
+    display: block;
+    text-decoration: none;
+    color: #383838;
+    font-weight: 600;
+    border-radius: 50%;
+  }
+  
+  .page-ul li.pageNumber:hover a,
+  .page-ul li.pageNumber.active a {
+    background: #383838;
+    color: #C4E7C9;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  
+  .page-ul li:first-child {
+    margin-right: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+  }
+  
+  .page-ul li:last-child {
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .prev a, .next a{
+    color: #2D2E2F;
+    border: none;
+    border-color: transparent;
+  }
+
+  .prev a:focus, .next a:focus{
+    box-shadow: none;
+  }

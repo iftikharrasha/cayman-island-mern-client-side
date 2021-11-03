@@ -1,14 +1,13 @@
 import React from 'react';
-import './NotFound.css';
 
 const NotFound = () => {
     return (
         <>
         <section className="notFound">
             <div>
-                <h1 className="reg-28">404</h1>
+                <h2 className="reg-28">404</h2>
                 <div className="bar lit-14">
-                    <h2>This page could not be found</h2>
+                    <h3>This page could not be found</h3>
                 </div>
             </div>
         </section>

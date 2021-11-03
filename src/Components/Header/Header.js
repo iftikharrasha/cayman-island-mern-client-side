@@ -49,12 +49,12 @@ const Header = () => {
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="ml-lg-auto medi--20 menu">
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/home">Home</Nav.Link>
+                                    <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-offers">All offers</Nav.Link>
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/about">About</Nav.Link>
-                                    <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/faq">FAQ</Nav.Link>
                                     {
                                     loggedInUser.isSignedIn ? <Dropdown>
                                                                 <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center mr-lg-4">
-                                                                    <i class="fa-solid fa-cart-arrow-down"></i>
+                                                                    <i className="fa-solid fa-cart-arrow-down"></i>
                                                                 </Dropdown.Toggle>
 
                                                                 <Dropdown.Menu>
@@ -65,7 +65,7 @@ const Header = () => {
                                                             </Dropdown> :
                                                             <Dropdown>
                                                                 <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center mr-lg-4">
-                                                                    <i class="fa-solid fa-cart-arrow-down"></i>
+                                                                    <i className="fa-solid fa-cart-arrow-down"></i>
                                                                 </Dropdown.Toggle>
 
                                                                 <Dropdown.Menu>
@@ -83,7 +83,7 @@ const Header = () => {
                                                                 </Dropdown.Toggle>
 
                                                                 <Dropdown.Menu>
-                                                                    <Link to="/ride-search" className="dropdown-item lit--16">Manage Orders</Link>
+                                                                    <Link to={`/orders/${loggedInUser.idToken}`} className="dropdown-item lit--16">Manage Orders</Link>
                                                                     <Link to="/" className="dropdown-item lit--16" onClick={handleSignOut}>Sign Out</Link>
                                                                 </Dropdown.Menu>
                                                             </Dropdown> : 

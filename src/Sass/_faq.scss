@@ -1,0 +1,58 @@
+
+#faq-btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    width: 100%;
+    text-align: left;
+    color: $color_black;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    .title-wrapper {
+        display: block;
+        position: relative;
+        width: 100%;
+        .minus {
+            content: url('../img/minus.svg');
+            width: 1.5rem;
+            height: 1.5rem;
+            position: absolute;
+            right: 0;
+        }
+        .plus {
+            content: url('../img/plus.svg');
+            width: 1.5rem;
+            height: 1.5rem;
+            transform: rotate(90deg);
+            transition: all 0.5s ease-in;
+            position: absolute;
+            right: 0;
+        }
+    }
+    &:hover{
+        background-color: $color_pink;
+    }
+}
+.active {
+    background: linear-gradient(to right,#ff2f8b,#9035f9);
+    color: $color_white !important;
+}
+.panel-close {
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem 0 1rem;
+    opacity:0;
+    height:0;
+    transition: all 0.1s ease-in;
+}
+.panel-open {
+    overflow: hidden;
+    box-sizing: border-box;
+    background: $color_white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    opacity:1;
+    transition: all 0.5s ease-in;
+}

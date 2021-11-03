@@ -37,7 +37,7 @@ const Intro = () => {
                 <Container className="c--custom">
                         <Row>
                             <Col className="text-center mt-5">
-                                <h2 className="bold--40"> <strong>Intro to Island</strong></h2>
+                                <h2 className="bold--40"> <strong>Island Promo</strong></h2>
                                 <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
                             </Col>
                         </Row>

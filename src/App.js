@@ -11,18 +11,20 @@ import Hero from './Components/Hero/Hero.js';
 import Services from './Components/Services/Services.js';
 import Offers from './Components/Offers/Offers.js';
 import Intro from './Components/Intro/Intro.js';
-
+import Orders from './Components/Orders/Orders.js';
+import PlaceOrder from './Components/PlaceOrder/PlaceOrder.js';
 import Login from './Components/Login/Login.js';
 import SignUp from './Components/SignUp/SignUp.js';
 import Footer from './Components/Footer/Footer.js';
-import ServiceSearch from './Components/ServiceSearch/ServiceSearch.js';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import Contact from './Components/Contact/Contact.js';
 import NotFound from './Components/NotFound/NotFound.js';
 import Faq from './Components/Faq/Faq.js';
 import About from './Components/About/About.js';
+
+import ServiceSearch from './Components/ServiceSearch/ServiceSearch.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sass/style.css';
+import AllOffers from './Components/AllOffers/AllOffers.js';
 
 export const UserContext = createContext();
 
@@ -66,12 +68,16 @@ function App() {
                                             <Services/>
                                             <Offers/>
                                             <Intro/>
-
+                                            <Faq></Faq>
                                             <Footer></Footer>
                                         </Route>
                                         <Route path="/home">
                                             <Header/>
                                             <Hero/>
+                                            <Services/>
+                                            <Offers/>
+                                            <Intro/>
+                                            <Faq></Faq>
                                             <Footer></Footer>
                                         </Route>
                                         <Route path="/login">
@@ -87,17 +93,21 @@ function App() {
                                         <Route path="/about">
                                             <Header/>
                                             <About></About>
-                                            <Contact></Contact>
                                             <Footer></Footer>
                                         </Route>
-                                        <Route path="/faq">
+                                        <Route path="/all-offers">
                                             <Header/>
-                                            <Faq></Faq>
+                                            <AllOffers/>
                                             <Footer></Footer>
                                         </Route>
-                                        <PrivateRoute path="/service-search/:serviceRoute">
+                                        <PrivateRoute path="/orders/:orderOwner">
                                             <Header/>
-                                            <ServiceSearch></ServiceSearch>
+                                            <Orders/>
+                                            <Footer></Footer>
+                                        </PrivateRoute>
+                                        <PrivateRoute path="/place-order/:orderId">
+                                            <Header/>
+                                            <PlaceOrder/>
                                             <Footer></Footer>
                                         </PrivateRoute>
                                         <Route path="*">
