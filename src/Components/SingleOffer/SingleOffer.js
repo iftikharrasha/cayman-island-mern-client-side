@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import arrow from '../../img/arrow.svg';
 
 const SingleOffer = (props) => {
-    const {icon, title, id} = props.offer;
+    const {img, title, id} = props.offer;
 
     return (
         <>
             <div className="card--single" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" key={id}>
                 <div className="card--img">
-                    <img src={icon} alt={icon} className="img-fluid"/>
+                    <img src={img} alt={id} className="img-fluid"/>
                 </div>
                 <h3 className="bold--22 my-4">{title}</h3>
                 <p className="lit--16">Our most popular service. Clients can appear on both "Today" and "All Time" rankings.

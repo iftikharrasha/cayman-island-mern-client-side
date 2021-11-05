@@ -1,32 +1,64 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { services } from '../../FakeData/services';
+import camping from '../../img/camping.png';
+import guide from '../../img/guide.png';
+import beaches from '../../img/beaches.png';
+import rides from '../../img/rides.png';
+import popular from '../../img/popular.png';
+import budget from '../../img/budget.png';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
+    const services = [
+        {
+            id: 1,
+            name: "Camping",
+            icon: camping,
+        },
+        {
+            id: 2,
+            name: "Guide",
+            icon: guide,
+        },
+        {
+            id: 3,
+            name: "Beaches",
+            icon: beaches,
+        },
+        {
+            id: 4,
+            name: "Rides",
+            icon: rides,
+        },
+        {
+            id: 5,
+            name: "Popular",
+            icon: popular,
+        },
+        {
+            id: 6,
+            name: "budget",
+            icon: budget,
+        },
+    ]
+
     return (
         <>
             <section className="get-service py-5" id="getservice">
                 <Container className="c--custom">
                         <Row>
                             <Col md={12} className="text-center mt-5">
-                                <h2 className="bold--40"> <strong>Top Services</strong></h2>
-                                <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
+                                <h2 className="bold--40"> <strong>Our Services</strong></h2>
                             </Col>
                             <Col md={12}>
                                 <Row className="d-flex align-items-center justify-content-center">
 
                                 {services.map((service) => (
-                                    <Col xl={4} sm={6} className="d-flex align-items-center justify-content-center p-4" key={service.id}>
+                                    <Col xl={2} sm={4} className="d-flex align-items-center justify-content-center p-4" key={service.id}>
                                         <div className="services">
                                             <div className="serve-item text-center">
                                                 <h3 className="text-center semi-28">{service.name}</h3>
                                                 <img src={service.icon} className="py-3" alt="rentals"/>
-                                                <div className="serve-extra">
-                                                    <p>
-                                                        <span className="ml-2 lit--20">{service.title}</span> 
-                                                    </p>
-                                                </div>
                                             </div>
                                         </div>
                                     </Col>

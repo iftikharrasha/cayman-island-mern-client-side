@@ -207,9 +207,9 @@
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 @media (max-width: 575.98px) {
@@ -237,7 +237,8 @@
   width: 28%;
   border-radius: 1.5rem;
   text-align: center;
-  padding: 5rem 3rem 5rem 3rem;
+  padding: 2rem;
+  padding-bottom: 5rem;
   position: relative;
   margin-bottom: 4rem;
   border: 1px solid #eee;
@@ -293,7 +294,6 @@
       -ms-flex-align: center;
           align-items: center;
   background: #f7f9fd;
-  padding: 40px;
 }
 
 .offers .offer--cards .card--single button {
@@ -454,8 +454,7 @@
 }
 
 .page .page--top .banner {
-  border: 0.3125rem solid var(--color_purple);
-  border-radius: 2.2rem;
+  border-radius: 1.2rem;
 }
 
 @media (max-width: 575.98px) {
@@ -531,7 +530,7 @@
   border-radius: 0.4rem;
 }
 
-.orders .service--table .service--card .card--data .platform {
+.orders .service--table .service--card .card--data .profile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -546,13 +545,7 @@
           justify-content: flex-start;
 }
 
-@media (max-width: 575.98px) {
-  .orders .service--table .service--card .card--data .platform {
-    position: relative;
-  }
-}
-
-.orders .service--table .service--card .card--data .platform .platform--icon {
+.orders .service--table .service--card .card--data .profile .platform--icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,16 +564,22 @@
 }
 
 @media (max-width: 575.98px) {
-  .orders .service--table .service--card .card--data .platform .platform--icon {
+  .orders .service--table .service--card .card--data .profile .platform--icon {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .orders .service--table .service--card .card--data .platform .platform--icon {
+  .orders .service--table .service--card .card--data .profile .platform--icon {
     width: 3.5rem;
     height: 3.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .orders .service--table .service--card .card--data .platform {
+    position: relative;
   }
 }
 

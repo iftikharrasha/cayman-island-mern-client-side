@@ -84,6 +84,7 @@ const Header = () => {
 
                                                                 <Dropdown.Menu>
                                                                     <Link to={`/orders/${loggedInUser.idToken}`} className="dropdown-item lit--16">Manage Orders</Link>
+                                                                    <Link to={`/add-offers/${loggedInUser.idToken}`} className="dropdown-item lit--16">Add Offers</Link>
                                                                     <Link to="/" className="dropdown-item lit--16" onClick={handleSignOut}>Sign Out</Link>
                                                                 </Dropdown.Menu>
                                                             </Dropdown> : 

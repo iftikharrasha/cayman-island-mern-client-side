@@ -27,12 +27,9 @@
                 background: $color_lightblue;
                 color: $color_white;
                 border-radius: 0.4rem;
-                .platform{
+                .profile{
                     @include flexCenter;
                     justify-content: flex-start;
-                    @media (max-width: 575.98px) {
-                        position: relative;
-                    }
                     .platform--icon{
                         @include flexCenter;
                         background: $color_purple;
@@ -49,6 +46,11 @@
                             width: 3.5rem;
                             height: 3.5rem;
                         }
+                    }
+                }
+                .platform{
+                    @media (max-width: 575.98px) {
+                        position: relative;
                     }
                     p{
                         @media (max-width: 575.98px) {

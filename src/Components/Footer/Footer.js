@@ -7,7 +7,7 @@ const Footer = () => {
         <>
             <footer className="footer" id="footer">
                 <div className="footer--img">
-                    <h2 className="bold-140"><span>CAYMAN ISLAND</span></h2>
+                    <h2 className="bold-140"><span>WE INVENTED THE COLOUR BLUE.</span></h2>
                 </div>
                 <Container className="c--custom">
                     <div className="footer--counter">

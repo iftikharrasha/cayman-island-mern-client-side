@@ -65,8 +65,7 @@
     .page--top{
         min-height: auto;
         .banner{
-            border: 0.3125rem solid $color_purple;
-            border-radius: 2.2rem;
+            border-radius: 1.2rem;
             @media (max-width: 575.98px) {
                 width: 25rem;
             }

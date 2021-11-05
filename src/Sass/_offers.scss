@@ -6,7 +6,7 @@
         margin: 3rem 0;
         @include flexCenter;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
         @media (max-width: 575.98px) {
             flex-wrap: wrap;
         }
@@ -22,7 +22,8 @@
             width: 28%;
             border-radius: 1.5rem;
             text-align: center;
-            padding: 5rem 3rem 5rem 3rem;
+            padding: 2rem;
+            padding-bottom: 5rem;
             position: relative;
             margin-bottom: 4rem;
             border: 1px solid #eee;
@@ -53,7 +54,6 @@
             .card--img{
                 @include flexCenter;
                 background: #f7f9fd;
-                padding: 40px;
             }
             button{
                 background: $color_white;
