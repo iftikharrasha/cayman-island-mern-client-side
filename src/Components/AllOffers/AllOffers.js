@@ -26,17 +26,17 @@ const AllOffers = () => {
 
     return (
         <>
-            <section className="outlets pb-5">
+            <section className="allOffers pb-2">
                 <Container className="c--custom">
                     <Row className="pt-5">
-                        <Col md={12} className="text-center mt-5">
+                        <Col md={12} className="text-center">
                             <h2 className="bold--40"> <strong>All Offers</strong></h2>
                             <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
                         </Col>
                     </Row>
                                         
-                    <div className="offers mt-150-div">
-                            <Row className="pt-5">
+                    <div className="offers">
+                            <Row>
                                 <Col sm={7} className="mx-auto">
                                     <form>
                                         <div className="inner-form">

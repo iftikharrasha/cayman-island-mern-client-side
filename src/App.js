@@ -11,7 +11,8 @@ import Hero from './Components/Hero/Hero.js';
 import Services from './Components/Services/Services.js';
 import Offers from './Components/Offers/Offers.js';
 import Intro from './Components/Intro/Intro.js';
-import Orders from './Components/Orders/Orders.js';
+import MyOrders from './Components/MyOrders/MyOrders.js';
+import AllOrders from './Components/AllOrders/AllOrders.js';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder.js';
 import Login from './Components/Login/Login.js';
 import SignUp from './Components/SignUp/SignUp.js';
@@ -103,9 +104,14 @@ function App() {
                                     <AllOffers/>
                                     <Footer></Footer>
                                 </Route>
-                                <PrivateRoute path="/orders/:orderOwner">
+                                <PrivateRoute path="/all-orders/:orderOwner">
                                     <Header/>
-                                    <Orders/>
+                                    <AllOrders/>
+                                    <Footer></Footer>
+                                </PrivateRoute>
+                                <PrivateRoute path="/my-orders/:orderOwner">
+                                    <Header/>
+                                    <MyOrders/>
                                     <Footer></Footer>
                                 </PrivateRoute>
                                 <PrivateRoute path="/place-order/:orderId">

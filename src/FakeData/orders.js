@@ -36,7 +36,7 @@ export const orders = [
         category: "Camping",
         title: "Amazing Tours And Fun Adventures Waiting For You",
         icon: camping,
-        route: "protection",
+        status: "pending",
         price: "185",
     },
     {

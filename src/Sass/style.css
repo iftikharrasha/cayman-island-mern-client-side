@@ -495,7 +495,7 @@
 }
 
 .orders {
-  padding: 10rem 0 10rem 0;
+  padding: 2rem 0 10rem 0;
 }
 
 .orders .c--custom--2 {
@@ -792,7 +792,7 @@
 }
 
 @media (max-width: 575.98px) {
-  .orders .service--table .service--card .card--data .label, .orders .service--table .service--card .card--data .traffic, .orders .service--table .service--card .card--data .price, .orders .service--table .service--card .card--data .store {
+  .orders .service--table .service--card .card--data .label, .orders .service--table .service--card .card--data .traffic, .orders .service--table .service--card .card--data .price {
     display: none;
   }
 }

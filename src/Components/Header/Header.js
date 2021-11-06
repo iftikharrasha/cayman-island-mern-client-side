@@ -50,7 +50,10 @@ const Header = () => {
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="ml-lg-auto medi--20 menu">
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/home">Home</Nav.Link>
-                                    <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-offers">All offers</Nav.Link>
+                                    <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-offers">All Offers</Nav.Link>
+                                    { loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to={/all-orders/+loggedInUser.tokenId}>All Orders</Nav.Link>
+                                     : <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/login">All Orders</Nav.Link>}
+                                    
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/about">About</Nav.Link>
                                     {
                                     loggedInUser.isSignedIn ? <Dropdown>
@@ -84,7 +87,7 @@ const Header = () => {
                                                                 </Dropdown.Toggle>
 
                                                                 <Dropdown.Menu>
-                                                                    <Link to={`/orders/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Manage Orders</Link>
+                                                                    <Link to={`/my-orders/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Manage My Orders</Link>
                                                                     <Link to={`/add-offers/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Add Offers</Link>
                                                                     <Link to="/" className="dropdown-item lit--16" onClick={handleSignOut}>Sign Out</Link>
                                                                 </Dropdown.Menu>

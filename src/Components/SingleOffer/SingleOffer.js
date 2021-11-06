@@ -12,8 +12,7 @@ const SingleOffer = (props) => {
                     <img src={img} alt={id} className="img-fluid"/>
                 </div>
                 <h3 className="bold--22 my-4">{title}</h3>
-                <p className="lit--16">{desc.slice(0, 100)} . . .
-                </p>
+                <p className="lit--16">{desc.slice(0, 100)} . . .</p>
                 <button className="btn bold--22">
                     <Link to={"/place-order/"+id}>
                         Order Now
