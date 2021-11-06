@@ -32,16 +32,19 @@ const Login = () => {
         .signInWithPopup(provider)
         .then((result) => {
             const user = result.user;
-            const {displayName, email, photoURL} = user;
+            const {displayName, email, photoURL, uid} = user;
+            console.log(user);
             const signedInUser = {
                 isSignedIn: true,
                 email: email,
                 photo: photoURL,
+                tokenId: uid,
                 success: true,
                 name: (displayName.split(' '))[0]
             };
 
             setLoggedInUser(signedInUser);
+            localStorage.setItem('uid', signedInUser.tokenId);
             setUserToken();
             history.replace(from);
         }).catch((error) => {
@@ -53,7 +56,7 @@ const Login = () => {
     const setUserToken = () => {
         firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
             localStorage.setItem('token', idToken);
-            console.log(idToken);
+            // console.log(idToken);
         }).catch((error) => {
             console.log(error);
         });

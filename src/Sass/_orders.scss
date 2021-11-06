@@ -32,10 +32,8 @@
                     justify-content: flex-start;
                     .platform--icon{
                         @include flexCenter;
-                        background: $color_purple;
+                        background: $color_white;
                         padding: 1rem;
-                        border-top-left-radius: 0.4rem;
-                        border-bottom-left-radius: 0.4rem;
                         width: 4rem;
                         height: 4rem;
                         @media (max-width: 575.98px) {
@@ -76,7 +74,7 @@
                     @include flexCenter;
                     justify-content: flex-start;
                     p{
-                        background: #201E49;
+                        background: $color_purple;
                         padding: .2rem .5rem;
                         border-radius: 0.3rem;
                         text-transform: uppercase;

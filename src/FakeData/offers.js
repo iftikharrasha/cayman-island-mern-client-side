@@ -1,14 +1,3 @@
-import protectionImg from '../img/protectionImg.jpg';
-import implantsImg from '../img/implantsImg.jpg';
-import careImg from '../img/careImg.jpg';
-
-import camping from '../img/camping.png';
-import guide from '../img/guide.png';
-import beaches from '../img/beaches.png';
-import rides from '../img/rides.png';
-import popular from '../img/popular.png';
-import budget from '../img/budget.png';
-
 export const offers = [
     {
         id: 1,

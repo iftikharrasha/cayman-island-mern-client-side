@@ -34,18 +34,21 @@ function App() {
         if (!token) {
             return {
                 isSignedIn: false,
-                email: '',
                 name: '',
+                email: '',
                 photo: '',
+                tokenId: '',
                 success: false,
                 error: ''
             };
         }
         const {name, email, picture} = jwt_decode(token);
+        const uidDecoded = localStorage.getItem('uid');
         const decodedUser = {
             isSignedIn: true,
             email: email,
             photo: picture,
+            tokenId: uidDecoded,
             success: true,
             name: (name.split(' '))[0]
         }
@@ -61,59 +64,59 @@ function App() {
                 <Router>
                     <ScrollToTop>
                         <Route render={({location}) => (
-                                    <Switch location={location}>
-                                        <Route exact path="/">
-                                            <Header/>
-                                            <Hero/>
-                                            <Services/>
-                                            <Offers/>
-                                            <Intro/>
-                                            <Faq></Faq>
-                                            <Footer></Footer>
-                                        </Route>
-                                        <Route path="/home">
-                                            <Header/>
-                                            <Hero/>
-                                            <Services/>
-                                            <Offers/>
-                                            <Intro/>
-                                            <Faq></Faq>
-                                            <Footer></Footer>
-                                        </Route>
-                                        <Route path="/login">
-                                            <Header/>
-                                            <Login></Login>
-                                            <Footer></Footer>
-                                        </Route>
-                                        <Route path="/signup">
-                                            <Header/>
-                                            <SignUp></SignUp>
-                                            <Footer></Footer>
-                                        </Route>
-                                        <Route path="/about">
-                                            <Header/>
-                                            <About></About>
-                                            <Footer></Footer>
-                                        </Route>
-                                        <Route path="/all-offers">
-                                            <Header/>
-                                            <AllOffers/>
-                                            <Footer></Footer>
-                                        </Route>
-                                        <PrivateRoute path="/orders/:orderOwner">
-                                            <Header/>
-                                            <Orders/>
-                                            <Footer></Footer>
-                                        </PrivateRoute>
-                                        <PrivateRoute path="/place-order/:orderId">
-                                            <Header/>
-                                            <PlaceOrder/>
-                                            <Footer></Footer>
-                                        </PrivateRoute>
-                                        <Route path="*">
-                                            <NotFound></NotFound>
-                                        </Route>
-                                    </Switch>
+                            <Switch location={location}>
+                                <Route exact path="/">
+                                    <Header/>
+                                    <Hero/>
+                                    <Services/>
+                                    <Offers/>
+                                    <Intro/>
+                                    <Faq></Faq>
+                                    <Footer></Footer>
+                                </Route>
+                                <Route path="/home">
+                                    <Header/>
+                                    <Hero/>
+                                    <Services/>
+                                    <Offers/>
+                                    <Intro/>
+                                    <Faq></Faq>
+                                    <Footer></Footer>
+                                </Route>
+                                <Route path="/login">
+                                    <Header/>
+                                    <Login></Login>
+                                    <Footer></Footer>
+                                </Route>
+                                <Route path="/signup">
+                                    <Header/>
+                                    <SignUp></SignUp>
+                                    <Footer></Footer>
+                                </Route>
+                                <Route path="/about">
+                                    <Header/>
+                                    <About></About>
+                                    <Footer></Footer>
+                                </Route>
+                                <Route path="/all-offers">
+                                    <Header/>
+                                    <AllOffers/>
+                                    <Footer></Footer>
+                                </Route>
+                                <PrivateRoute path="/orders/:orderOwner">
+                                    <Header/>
+                                    <Orders/>
+                                    <Footer></Footer>
+                                </PrivateRoute>
+                                <PrivateRoute path="/place-order/:orderId">
+                                    <Header/>
+                                    <PlaceOrder/>
+                                    <Footer></Footer>
+                                </PrivateRoute>
+                                <Route path="*">
+                                    <NotFound></NotFound>
+                                </Route>
+                            </Switch>
                         )} />
                     </ScrollToTop>
                 </Router>

@@ -14,7 +14,7 @@ const Offers = () => {
                                 <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
                             </Col>
                             <div className="offer--cards">
-                                {offers.map((offer) => (
+                                {offers.slice(0, 6).map((offer) => (
                                     <SingleOffer offer={offer} key={offer.id}/>
                                 ))}
 

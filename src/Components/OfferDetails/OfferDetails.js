@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 const OfferDetails = (props) => {
     const { orderId } = useParams();
     const orderDetail = offers.find(offer => offer.id == orderId);
-    const {id, category, title, img, icon, key, price, desc} = orderDetail;
+    const {id, category, title, img, key, price, desc} = orderDetail;
 
     return (
         <>
@@ -27,13 +27,9 @@ const OfferDetails = (props) => {
                             <Col lg={12} className="order-lg-2 order-1" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
                                 <h1 className="bold--30">{title}</h1>
                                 <h2 className="my-4 bold--30">Category: {category}</h2>
-                                <h4 className="lit--16">
-                                    {desc}
-                                </h4>
+                                <h4 className="lit--16">{desc}</h4>
                                 <p className="mt-4 bold--16">Price Starting from:</p> 
-                                <h4 className="lit--16">
-                                {price}$/Night
-                                </h4>
+                                <h5 className="lit--16">{price}$/Night</h5>
                             </Col>
                         </Row>
                     </div>

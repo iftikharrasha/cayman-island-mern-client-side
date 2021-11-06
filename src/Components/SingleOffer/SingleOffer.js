@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import arrow from '../../img/arrow.svg';
 
 const SingleOffer = (props) => {
-    const {img, title, id} = props.offer;
+    const {img, title, id, desc} = props.offer;
 
     return (
         <>
@@ -12,7 +12,7 @@ const SingleOffer = (props) => {
                     <img src={img} alt={id} className="img-fluid"/>
                 </div>
                 <h3 className="bold--22 my-4">{title}</h3>
-                <p className="lit--16">Our most popular service. Clients can appear on both "Today" and "All Time" rankings.
+                <p className="lit--16">{desc.slice(0, 100)} . . .
                 </p>
                 <button className="btn bold--22">
                     <Link to={"/place-order/"+id}>

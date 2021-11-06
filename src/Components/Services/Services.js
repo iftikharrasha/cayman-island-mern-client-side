@@ -57,8 +57,8 @@ const Services = () => {
                                     <Col xl={2} sm={4} className="d-flex align-items-center justify-content-center p-4" key={service.id}>
                                         <div className="services">
                                             <div className="serve-item text-center">
-                                                <h3 className="text-center semi-28">{service.name}</h3>
                                                 <img src={service.icon} className="py-3" alt="rentals"/>
+                                                <h3 className="text-center semi-28">{service.name}</h3>
                                             </div>
                                         </div>
                                     </Col>

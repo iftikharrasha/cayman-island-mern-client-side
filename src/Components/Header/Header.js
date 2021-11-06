@@ -14,18 +14,19 @@ const Header = () => {
         firebase.auth().signOut()
         .then((res) => {
           localStorage.removeItem('token');
+          localStorage.removeItem('uid');
           const signedOutUser = {
             isSignedIn: false,
             name: '',
             email: '',
             photo: '',
+            tokenId: '',
             success: false,
             error: ''
           }
           setLoggedInUser(signedOutUser);
         }).catch((error) => {
-          // An error happened.
-          console.log(error);
+            console.log(error);
         });
       }
 
@@ -83,8 +84,8 @@ const Header = () => {
                                                                 </Dropdown.Toggle>
 
                                                                 <Dropdown.Menu>
-                                                                    <Link to={`/orders/${loggedInUser.idToken}`} className="dropdown-item lit--16">Manage Orders</Link>
-                                                                    <Link to={`/add-offers/${loggedInUser.idToken}`} className="dropdown-item lit--16">Add Offers</Link>
+                                                                    <Link to={`/orders/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Manage Orders</Link>
+                                                                    <Link to={`/add-offers/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Add Offers</Link>
                                                                     <Link to="/" className="dropdown-item lit--16" onClick={handleSignOut}>Sign Out</Link>
                                                                 </Dropdown.Menu>
                                                             </Dropdown> : 
