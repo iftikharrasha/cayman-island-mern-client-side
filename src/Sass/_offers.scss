@@ -55,6 +55,10 @@
             .card--img{
                 @include flexCenter;
                 background: #f7f9fd;
+                img{
+                    width: 100%;
+                    height: 10rem;
+                }
             }
             button{
                 background: $color_white;

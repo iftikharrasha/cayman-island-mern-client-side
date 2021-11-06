@@ -5,8 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const OfferDetails = (props) => {
     const { orderId } = useParams();
-    const orderDetail = offers.find(offer => offer.id == orderId);
-    const {id, category, title, img, key, price, desc} = orderDetail;
+    const orderDetail = offers.find(offer => offer._id == orderId);
+    const {_id, category, title, img, key, price, desc} = orderDetail;
 
     return (
         <>

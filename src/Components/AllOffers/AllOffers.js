@@ -5,10 +5,6 @@ import Pagination from '../Pagination/Pagination';
 import SingleOffer from '../SingleOffer/SingleOffer';
 
 const AllOffers = () => {
-    // delete
-    // const allCategories = ['All', ...new Set(outletData.map((item) => item.category))];
-    // const [categories] = useState(allCategories);
-
     const [offer, setOffer] = useState(offers);
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -56,7 +52,7 @@ const AllOffers = () => {
                                                 return offer;
                                             }
                                         }).slice(pagination.start,pagination.end).map(offer =>
-                                                <SingleOffer offer={offer} key={offer.id}/>
+                                                <SingleOffer offer={offer} key={offer._id}/>
                                             )
                                     }
                                 </div>

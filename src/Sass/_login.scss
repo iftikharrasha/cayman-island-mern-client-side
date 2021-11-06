@@ -17,8 +17,8 @@
         .form{
             .input-field{
                 position: relative;
-                input{
-                    width: 100%;
+                input, textarea{
+                    width: 100% !important;
                     padding-left: 2.8125rem !important;
                 }
                 .i-envelope {

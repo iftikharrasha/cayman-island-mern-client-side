@@ -299,6 +299,11 @@
   background: #f7f9fd;
 }
 
+.offers .offer--cards .card--single .card--img img {
+  width: 100%;
+  height: 10rem;
+}
+
 .offers .offer--cards .card--single button {
   background: var(--color_white);
   padding: .8rem 2rem;
@@ -854,8 +859,8 @@
   position: relative;
 }
 
-.login .login-form .form .input-field input {
-  width: 100%;
+.login .login-form .form .input-field input, .login .login-form .form .input-field textarea {
+  width: 100% !important;
   padding-left: 2.8125rem !important;
 }
 

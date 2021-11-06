@@ -14,6 +14,7 @@ import Intro from './Components/Intro/Intro.js';
 import MyOrders from './Components/MyOrders/MyOrders.js';
 import AllOrders from './Components/AllOrders/AllOrders.js';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder.js';
+import AddOffer from './Components/AddOffer/AddOffer.js';
 import Login from './Components/Login/Login.js';
 import SignUp from './Components/SignUp/SignUp.js';
 import Footer from './Components/Footer/Footer.js';
@@ -117,6 +118,11 @@ function App() {
                                 <PrivateRoute path="/place-order/:orderId">
                                     <Header/>
                                     <PlaceOrder/>
+                                    <Footer></Footer>
+                                </PrivateRoute>
+                                <PrivateRoute path="/add-offers/:addedBy">
+                                    <Header/>
+                                    <AddOffer/>
                                     <Footer></Footer>
                                 </PrivateRoute>
                                 <Route path="*">

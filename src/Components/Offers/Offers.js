@@ -15,7 +15,7 @@ const Offers = () => {
                             </Col>
                             <div className="offer--cards">
                                 {offers.slice(0, 6).map((offer) => (
-                                    <SingleOffer offer={offer} key={offer.id}/>
+                                    <SingleOffer offer={offer} key={offer._id}/>
                                 ))}
 
                             </div>
