@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { offers } from '../../FakeData/offers';
 import SingleOffer from '../SingleOffer/SingleOffer';
 
 const Offers = () => {
+    const [offers, setOffers] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/all-offers')
+        .then(res => res.json())
+        .then(data => setOffers(data));
+    }, [])
+
     return (
         <>
             <section className="offers py-5" id="offers">

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { offers } from '../../FakeData/offers';
 import Pagination from '../Pagination/Pagination';
 import SingleOffer from '../SingleOffer/SingleOffer';
 
 const AllOffers = () => {
-    const [offer, setOffer] = useState(offers);
+    const [offers, setOffers] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/all-offers')
+        .then(res => res.json())
+        .then(data => setOffers(data));
+    }, [])
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -45,7 +49,7 @@ const AllOffers = () => {
                                 </Col>  
                                 <div className="offer--cards">
                                     {
-                                        offer.filter(offer => {
+                                        offers.filter(offer => {
                                             if(searchTerm == ""){
                                                 return offer;
                                             }else if(offer.category.toLowerCase().includes(searchTerm.toLowerCase()) || offer.title.toLowerCase().includes(searchTerm.toLowerCase())){
@@ -59,7 +63,7 @@ const AllOffers = () => {
                             </Row>
                             <Row>
                                 <Col>
-                                    <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={offer.length}></Pagination>
+                                    <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={offers.length}></Pagination>
                                 </Col>
                             </Row>
                     </div>
