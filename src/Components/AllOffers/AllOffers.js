@@ -30,8 +30,7 @@ const AllOffers = () => {
                 <Container className="c--custom">
                     <Row className="pt-5">
                         <Col md={12} className="text-center">
-                            <h2 className="bold--40"> <strong>All Offers</strong></h2>
-                            <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
+                            <h2 className="bold--40 mb-4"> <strong>All Offers</strong></h2>
                         </Col>
                     </Row>
                                         

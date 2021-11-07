@@ -113,7 +113,9 @@
                 .price{
                     @include flexCenter;
                     justify-content: flex-start;
-                    p{
+                    p, button{
+                        background-color: transparent;
+                        border: none;
                         @media (max-width: 575.98px) {
                             font-size: 1.2rem;
                         }
@@ -145,7 +147,9 @@
                 .store{
                     @include flexCenter;
                     justify-content: flex-start;
-                    a{
+                    a, button{
+                        background-color: transparent;
+                        border: none;
                         color: $color_white;
                         text-transform: uppercase;
                         @media (max-width: 575.98px) {

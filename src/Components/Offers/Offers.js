@@ -17,7 +17,6 @@ const Offers = () => {
                         <Row>
                             <Col md={12} className="text-center mt-5">
                                 <h2 className="bold--40"> <strong>Main offers</strong></h2>
-                                <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
                             </Col>
                             <div className="offer--cards">
                                 {offers.slice(0, 6).map((offer) => (

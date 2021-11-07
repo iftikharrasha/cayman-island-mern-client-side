@@ -12,13 +12,64 @@ const AllOrders = () => {
         .then(data => setAllOrders(data));
     }, [])
 
+    //Deleting
+    const handleDeleteOrder = id => {
+        const proceed = window.confirm('Are you sure you want to delete this order?');
+        if(proceed) {
+            const url = `http://localhost:5000/cancel/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0){
+                    document.getElementById('success1').style.display = 'block';
+                    const remainingOrders = allOrders.filter(order => order._id !== id);
+                    setAllOrders(remainingOrders);
+                }else{
+                    document.getElementById('error1').style.display = 'block';
+                }
+            });
+        }
+    }
+
+    //Updating
+    const handleUpdateOrder = id => {
+        const proceed = window.confirm('Are you sure you want to approve this order?');
+        if(proceed) {
+            allOrders.status = false;
+            const url = `http://localhost:5000/update/${id}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(allOrders)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.modifiedCount > 0){
+                    const remainingOrders = allOrders;
+                    setAllOrders(remainingOrders);
+                }else{
+                    document.getElementById('error2').style.display = 'block';
+                }
+            });
+        }
+    }
+
     return (
         <>
             <section className="orders" id="services">
                 <Container className="c--custom">
                     <div className="service--title text-center">
                         <h2 className="bold--40"> <strong>Manage All Orders</strong></h2>
-                        <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
+                    </div>
+                    <div className="text-center mb-3">
+                        <p style={{color: 'green', display: 'none'}} id="success1">Successfully deleted your order!</p>
+                        <p style={{color: 'red', display: 'none'}} id="error1">There is a problem deleting the order!</p>
+                        <p style={{color: 'green', display: 'none'}} id="success2">Successfully Approved this order!</p>
+                        <p style={{color: 'red', display: 'none'}} id="error2">There is a problem approving the order!</p>
                     </div>
                 </Container>
                 <Container className="c--custom--2 mt-5">
@@ -40,7 +91,7 @@ const AllOrders = () => {
                                             <p className="bold--13">CATEGORY</p>
                                         </Col>
                                         <Col sm={2} xs={4} className="d-sm-block d-none">
-                                            <p className="bold--13">PRICING STARTING FROM</p>
+                                            <p className="bold--13">ACTION</p>
                                         </Col>
                                         <Col sm={2} xs={4} className="d-sm-block">
                                             <p className="bold--13">ACTION</p>
@@ -67,17 +118,19 @@ const AllOrders = () => {
                                             </Col>
                                             <Col sm={2} xs={4} className="label">
                                                 {
-                                                    detail.status ? <p className="bold--14" id="label-one">Pending</p> : <p className="bold--14" id="label-one">Approved</p>
+                                                    detail.status ? <p className="bold--14" id="label-one" style={{backgroundColor: 'red'}}>Pending</p> : <p className="bold--14" id="label-one">Approved</p>
                                                 }
                                             </Col>
                                             <Col sm={2} xs={4} className="traffic">
                                                 <p className="bold--18" id="traffic-one">{detail.category}</p>
                                             </Col>
                                             <Col sm={2} xs={4} className="price">
-                                                <p className="lit--22"><span className="bold--18" id="price-one">{detail.price} USD</span></p>
+                                                {
+                                                    detail.status ? <button className="lit--22" onClick={() => handleUpdateOrder(detail._id)}><span className="bold--18" id="price-one">Approve</span></button> : <button className="lit--22" disabled><span className="bold--18" id="price-one" style={{color: 'white'}}>N/A</span></button>
+                                                }
                                             </Col>
                                             <Col sm={2} xs={4} className="store">
-                                                <Link to="/cancel" className="bold--20" id="store-one">Cancel</Link>
+                                                <button className="bold--20" id="store-one" onClick={() => handleDeleteOrder(detail._id)}>Cancel</button>
                                             </Col>
                                             {/* <Col id="platform-one" className="collapse" aria-labelledby="heading-one" data-parent="#accordion">
                                                 

@@ -36,73 +36,12 @@ const MyOrders = () => {
         }
     }
 
-    // const {id, category, icon, token, price, status} = orderDetail;
-
-    // function toggleOnMobile(idName){
-    //     $("#toggleIcon-" + idName).toggleClass("fa-minus fa-plus");
-
-    //     const platform = document.getElementById("platform-" + idName);
-    //     platform.innerHTML = ' ';
-    //     const platformDiv = document.createElement('div');
-    //     const label = document.getElementById("label-" + idName).innerText;
-    //     const traffic = document.getElementById("traffic-" + idName).innerText;
-    //     const price = document.getElementById("price-" + idName).innerText;
-    //     const store = document.getElementById("store-" + idName).href;
-    //     platformDiv.className = 'row inserted';
-
-    //     platformDiv.innerHTML =  `
-    //     <div class="col">
-    //         <div class="row">
-    //             <div class="col-12 d-flex justify-content-between align-items-center">
-    //                 <div class="headlines">
-    //                     <p class="bold--13">LABEL</p>
-    //                 </div>
-    //                 <div class="label">
-    //                     <p class="bold--14">${label}</p>
-    //                 </div>
-    //             </div>
-
-    //             <div class="col-12 d-flex justify-content-between align-items-center">
-    //                 <div class="headlines">
-    //                     <p class="bold--13">TRAFFIC INDEX</p>
-    //                 </div>
-    //                 <div class="traffic">
-    //                     <p class="bold--18">${traffic}</p>
-    //                 </div>
-    //             </div>
-
-    //             <div class="col-12 d-flex justify-content-between align-items-center">
-    //                 <div class="headlines">
-    //                     <p class="bold--13">PRICING EQUIVALENT IN DOLLARS</p>
-    //                 </div>
-    //                 <div class="price">
-    //                     <p class="lit--22">Starting from <span class="bold--18 pl-3">${price}</span></p>
-    //                 </div>
-    //             </div>
-
-    //             <div class="col-12 d-flex justify-content-between align-items-center">
-    //                 <div class="headlines">
-    //                     <p class="bold--13">STORE</p>
-    //                 </div>
-    //                 <div class="col-6">
-    //                     <div class="store">
-    //                         <a href="${store}" class="bold--20">ORDER NOW</a>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    //     `
-    //     platform.appendChild(platformDiv);
-    // }
-
     return (
         <>
             <section className="orders" id="services">
                 <Container className="c--custom">
                     <div className="service--title text-center">
                         <h2 className="bold--40"> <strong>Your Orders</strong></h2>
-                        <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
                     </div>
                     <div className="text-center mb-3">
                         <p style={{color: 'green', display: 'none'}} id="success">Successfully deleted your order!</p>
@@ -155,7 +94,7 @@ const MyOrders = () => {
                                             </Col>
                                             <Col sm={2} xs={4} className="label">
                                                 {
-                                                    detail.status ? <p className="bold--14" id="label-one">Pending</p> : <p className="bold--14" id="label-one">Approved</p>
+                                                    detail.status ? <p className="bold--14" id="label-one" style={{backgroundColor: 'red'}}>Pending</p> : <p className="bold--14" id="label-one">Approved</p>
                                                 }
                                                 
                                             </Col>

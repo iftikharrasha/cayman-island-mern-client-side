@@ -22,8 +22,6 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import NotFound from './Components/NotFound/NotFound.js';
 import Faq from './Components/Faq/Faq.js';
 import About from './Components/About/About.js';
-
-import ServiceSearch from './Components/ServiceSearch/ServiceSearch.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sass/style.css';
 import AllOffers from './Components/AllOffers/AllOffers.js';
@@ -73,8 +71,8 @@ function App() {
                                     <Services/>
                                     <Offers/>
                                     <Intro/>
-                                    <Faq></Faq>
-                                    <Footer></Footer>
+                                    <Faq/>
+                                    <Footer/>
                                 </Route>
                                 <Route path="/home">
                                     <Header/>
@@ -82,51 +80,51 @@ function App() {
                                     <Services/>
                                     <Offers/>
                                     <Intro/>
-                                    <Faq></Faq>
-                                    <Footer></Footer>
+                                    <Faq/>
+                                    <Footer/>
                                 </Route>
                                 <Route path="/login">
                                     <Header/>
-                                    <Login></Login>
-                                    <Footer></Footer>
+                                    <Login/>
+                                    <Footer/>
                                 </Route>
                                 <Route path="/signup">
                                     <Header/>
-                                    <SignUp></SignUp>
-                                    <Footer></Footer>
+                                    <SignUp/>
+                                    <Footer/>
                                 </Route>
                                 <Route path="/about">
                                     <Header/>
-                                    <About></About>
-                                    <Footer></Footer>
+                                    <About/>
+                                    <Footer/>
                                 </Route>
                                 <Route path="/all-offers">
                                     <Header/>
                                     <AllOffers/>
-                                    <Footer></Footer>
+                                    <Footer/>
                                 </Route>
                                 <PrivateRoute path="/all-orders">
                                     <Header/>
                                     <AllOrders/>
-                                    <Footer></Footer>
+                                    <Footer/>
                                 </PrivateRoute>
                                 <PrivateRoute path="/my-orders/:orderOwner">
                                     <Header/>
                                     <MyOrders/>
-                                    <Footer></Footer>
+                                    <Footer/>
                                 </PrivateRoute>
                                 <PrivateRoute path="/place-order/:orderId">
                                     <Header/>
                                     <PlaceOrder/>
-                                    <Footer></Footer>
+                                    <Footer/>
                                 </PrivateRoute>
                                 <PrivateRoute path="/add-offers/:addedBy">
                                     <Header/>
                                     <AddOffer/>
-                                    <Footer></Footer>
+                                    <Footer/>
                                 </PrivateRoute>
                                 <Route path="*">
-                                    <NotFound></NotFound>
+                                    <NotFound/>
                                 </Route>
                             </Switch>
                         )} />

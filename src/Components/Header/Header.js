@@ -56,17 +56,8 @@ const Header = () => {
                                     
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/about">About</Nav.Link>
                                     {
-                                    loggedInUser.isSignedIn ? <Dropdown>
-                                                                <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center mr-lg-4">
-                                                                    <i className="fa-solid fa-cart-arrow-down"></i>
-                                                                </Dropdown.Toggle>
-
-                                                                <Dropdown.Menu>
-                                                                    <Link to="/ride-search" className="dropdown-item lit--16">Find Ride</Link>
-                                                                    <Link to="/ride-search" className="dropdown-item lit--16">Find Ride</Link>
-                                                                    <Link to="/ride-search" className="dropdown-item lit--16">Find Ride</Link>
-                                                                </Dropdown.Menu>
-                                                            </Dropdown> :
+                                    loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to={`/add-offers/${loggedInUser.name}`}>Add Offers</Nav.Link>
+                                                            :
                                                             <Dropdown>
                                                                 <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center mr-lg-4">
                                                                     <i className="fa-solid fa-cart-arrow-down"></i>
