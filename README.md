@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://cayman-island.web.app">
-    <img alt="Logo" src="./src/img/logo.webp" width="100" />
+    <img alt="Logo" src="./src/img/cayman.svg" width="100" />
   </a>
 </p>
 <h1 align="center">

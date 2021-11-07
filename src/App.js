@@ -44,11 +44,12 @@ function App() {
         }
         const {name, email, picture} = jwt_decode(token);
         const uidDecoded = localStorage.getItem('uid');
+        const unameDecoded = localStorage.getItem('uname');
         const decodedUser = {
             isSignedIn: true,
             email: email,
             photo: picture,
-            tokenId: uidDecoded,
+            tokenId: uidDecoded || unameDecoded,
             success: true,
             name: (name.split(' '))[0]
         }

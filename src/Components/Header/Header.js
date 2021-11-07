@@ -15,6 +15,7 @@ const Header = () => {
         .then((res) => {
           localStorage.removeItem('token');
           localStorage.removeItem('uid');
+          localStorage.removeItem('uname');
           const signedOutUser = {
             isSignedIn: false,
             name: '',

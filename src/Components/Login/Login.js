@@ -111,6 +111,7 @@ const Login = () => {
             const newUserInfo = {...loggedInUser};
             newUserInfo[event.target.name] = event.target.value;
             setLoggedInUser(newUserInfo);
+            localStorage.setItem('uname', newUserInfo.email);
         }
     }
 
