@@ -6,7 +6,7 @@ import beaches from '../../img/beaches.png';
 const AllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/all-orders`
+        const url = `https://glacial-springs-97945.herokuapp.com/all-orders`
         fetch(url)
         .then(res => res.json())
         .then(data => setAllOrders(data));
@@ -16,7 +16,7 @@ const AllOrders = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure you want to delete this order?');
         if(proceed) {
-            const url = `http://localhost:5000/cancel/${id}`;
+            const url = `https://glacial-springs-97945.herokuapp.com/cancel/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -38,7 +38,7 @@ const AllOrders = () => {
         const proceed = window.confirm('Are you sure you want to approve this order?');
         if(proceed) {
             allOrders.status = false;
-            const url = `http://localhost:5000/update/${id}`;
+            const url = `https://glacial-springs-97945.herokuapp.com/update/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

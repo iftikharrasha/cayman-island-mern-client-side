@@ -19,7 +19,7 @@ const AddOffer = () => {
         const price = priceRef.current.value;
 
         const newUser = {title, category, img, desc, price, addedBy};
-        fetch('http://localhost:5000/add-offers', {
+        fetch('https://glacial-springs-97945.herokuapp.com/add-offers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

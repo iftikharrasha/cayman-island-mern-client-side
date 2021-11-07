@@ -7,7 +7,7 @@ const OfferDetails = (props) => {
 
     const [offer, setOffer] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/place-order/${orderId}`
+        const url = `https://glacial-springs-97945.herokuapp.com/place-order/${orderId}`
         fetch(url)
         .then(res => res.json())
         .then(data => setOffer(data));
@@ -31,7 +31,7 @@ const OfferDetails = (props) => {
         const status = true;
 
         const newUser = {orderId, name, email, phone, address, category, price, token, status };
-        fetch('http://localhost:5000/add-order', {
+        fetch('https://glacial-springs-97945.herokuapp.com/add-order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

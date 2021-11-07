@@ -5,7 +5,7 @@ import SingleOffer from '../SingleOffer/SingleOffer';
 const Offers = () => {
     const [offers, setOffers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/all-offers')
+        fetch('https://glacial-springs-97945.herokuapp.com/all-offers')
         .then(res => res.json())
         .then(data => setOffers(data));
     }, [])
