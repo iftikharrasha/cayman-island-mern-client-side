@@ -105,7 +105,7 @@ function App() {
                                     <AllOffers/>
                                     <Footer></Footer>
                                 </Route>
-                                <PrivateRoute path="/all-orders/:orderOwner">
+                                <PrivateRoute path="/all-orders">
                                     <Header/>
                                     <AllOrders/>
                                     <Footer></Footer>

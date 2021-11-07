@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { orders } from '../../FakeData/orders';
 import beaches from '../../img/beaches.png';
 
 const AllOrders = () => {
-    const { orderOwner } = useParams();
-    // const orderDetail = orders.filter(order => order.token === orderOwner);
-    // console.log(orderDetail);
-    // const {id, category, icon, token, price, status} = orderDetail;
+    const [allOrders, setAllOrders] = useState([]);
+    useEffect(() => {
+        const url = `http://localhost:5000/all-orders`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setAllOrders(data));
+    }, [])
 
     return (
         <>
@@ -36,7 +37,7 @@ const AllOrders = () => {
                                             <p className="bold--13">STATUS</p>
                                         </Col>
                                         <Col sm={2} xs={4} className="d-sm-block d-none">
-                                            <p className="bold--13">Category</p>
+                                            <p className="bold--13">CATEGORY</p>
                                         </Col>
                                         <Col sm={2} xs={4} className="d-sm-block d-none">
                                             <p className="bold--13">PRICING STARTING FROM</p>
@@ -47,7 +48,7 @@ const AllOrders = () => {
                                     </Row>
                                 </div>
 
-                                {orders.map((detail) => (
+                                {allOrders.map((detail) => (
                                     <div className="card--data" data-aos="fade-left" data-aos-duration="1000">
                                         <div className="row mb-4">
                                             <Col sm={1} xs={4} className="profile">
@@ -65,7 +66,9 @@ const AllOrders = () => {
                                                 </div>
                                             </Col>
                                             <Col sm={2} xs={4} className="label">
-                                                <p className="bold--14" id="label-one">{detail.status}</p>
+                                                {
+                                                    detail.status ? <p className="bold--14" id="label-one">Pending</p> : <p className="bold--14" id="label-one">Approved</p>
+                                                }
                                             </Col>
                                             <Col sm={2} xs={4} className="traffic">
                                                 <p className="bold--18" id="traffic-one">{detail.category}</p>

@@ -51,7 +51,7 @@ const Header = () => {
                                 <Nav className="ml-lg-auto medi--20 menu">
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/home">Home</Nav.Link>
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-offers">All Offers</Nav.Link>
-                                    { loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to={/all-orders/+loggedInUser.tokenId}>All Orders</Nav.Link>
+                                    { loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-orders">All Orders</Nav.Link>
                                      : <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/login">All Orders</Nav.Link>}
                                     
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/about">About</Nav.Link>

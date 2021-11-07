@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { orders } from '../../FakeData/orders';
 import beaches from '../../img/beaches.png';
 
 const MyOrders = () => {
     const { orderOwner } = useParams();
-    const orderDetail = orders.filter(order => order.token === orderOwner);
-    console.log(orderDetail);
+
+    const [myOrder, setMyOrder] = useState([]);
+    useEffect(() => {
+        const url = `http://localhost:5000/my-orders/${orderOwner}`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setMyOrder(data));
+    }, [])
+
     // const {id, category, icon, token, price, status} = orderDetail;
 
     // function toggleOnMobile(idName){
@@ -85,7 +91,7 @@ const MyOrders = () => {
                                 <div className="card--title">
                                     <Row>
                                         <Col sm={1} xs={4} className="text-center">
-                                            <p className="bold--13">BY</p>
+                                            <p className="bold--13">NO.</p>
                                         </Col>
                                         <Col sm={3} xs={4} className="text-center">
                                             <p className="bold--13">ORDER TOKEN</p>
@@ -94,7 +100,7 @@ const MyOrders = () => {
                                             <p className="bold--13">STATUS</p>
                                         </Col>
                                         <Col sm={2} xs={4} className="d-sm-block d-none">
-                                            <p className="bold--13">Category</p>
+                                            <p className="bold--13">CATEGORY</p>
                                         </Col>
                                         <Col sm={2} xs={4} className="d-sm-block d-none">
                                             <p className="bold--13">PRICING STARTING FROM</p>
@@ -105,17 +111,17 @@ const MyOrders = () => {
                                     </Row>
                                 </div>
 
-                                {orderDetail.map((detail) => (
+                                {myOrder.map((detail) => (
                                     <div className="card--data" data-aos="fade-left" data-aos-duration="1000">
                                         <div className="row mb-4">
                                             <Col sm={1} xs={4} className="profile">
                                                 <div className="platform--icon mr-lg-4 mr-3">
-                                                    <img src={beaches} alt="coinmarketcap-icon" className="img-fluid"/>
+                                                    <img src={beaches} alt="1" className="img-fluid"/>
                                                 </div>
                                             </Col>
                                             <Col sm={3} xs={4} className="d-flex align-items-center justify-content-center" id="heading-one">
                                                 <div className="platform" id="accordion-one" data-toggle="collapse" data-target="#platform-one" aria-expanded="true" aria-controls="platform-one">
-                                                    <p className="lit--22">{detail.token.slice(0, 10)}</p>
+                                                    <p className="lit--22">{detail.orderId.slice(0, 10)}</p>
                                                     {/* <span className="platform--toggle fa-stack fa-sm d-sm-none d-block">
                                                         <i className="fas fa-circle fa-stack-2x"></i>
                                                         <i className="fas fa-plus fa-stack-1x fa-inverse text-white" id="toggleIcon-one"></i>
@@ -123,7 +129,10 @@ const MyOrders = () => {
                                                 </div>
                                             </Col>
                                             <Col sm={2} xs={4} className="label">
-                                                <p className="bold--14" id="label-one">{detail.status}</p>
+                                                {
+                                                    detail.status ? <p className="bold--14" id="label-one">Pending</p> : <p className="bold--14" id="label-one">Approved</p>
+                                                }
+                                                
                                             </Col>
                                             <Col sm={2} xs={4} className="traffic">
                                                 <p className="bold--18" id="traffic-one">{detail.category}</p>

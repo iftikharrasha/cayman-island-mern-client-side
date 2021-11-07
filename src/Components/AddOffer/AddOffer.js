@@ -11,7 +11,7 @@ const AddOffer = () => {
     const descRef = useRef();
     const priceRef = useRef();
 
-    const handleAddOrder = e => {
+    const handleAddOffer = e => {
         const title = titleRef.current.value;
         const category = catRef.current.value;
         const img = imgRef.current.value;
@@ -52,7 +52,7 @@ const AddOffer = () => {
                             <h2 className="mt-3 text-center reg-28">Add a new Offer
                             </h2>
                         </div>
-                        <form className="form" onSubmit={handleAddOrder}>
+                        <form className="form" onSubmit={handleAddOffer}>
                             <div className="inputs my-4">
                                 <div className="input-field">
                                     <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit--14" type="text" ref={titleRef} name="title" placeholder="Enter Offer Title" autoComplete="on" required/>
