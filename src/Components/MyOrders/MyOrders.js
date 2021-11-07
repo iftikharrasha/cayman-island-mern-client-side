@@ -7,13 +7,34 @@ import beaches from '../../img/beaches.png';
 const MyOrders = () => {
     const { orderOwner } = useParams();
 
-    const [myOrder, setMyOrder] = useState([]);
+    const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
         const url = `http://localhost:5000/my-orders/${orderOwner}`
         fetch(url)
         .then(res => res.json())
-        .then(data => setMyOrder(data));
+        .then(data => setMyOrders(data));
     }, [])
+
+    //Deleting
+    const handleDeleteOrder = id => {
+        const proceed = window.confirm('Are you sure you want to delete this order?');
+        if(proceed) {
+            const url = `http://localhost:5000/cancel/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0){
+                    document.getElementById('success').style.display = 'block';
+                    const remainingOrders = myOrders.filter(myOrder => myOrder._id !== id);
+                    setMyOrders(remainingOrders);
+                }else{
+                    document.getElementById('error').style.display = 'block';
+                }
+            });
+        }
+    }
 
     // const {id, category, icon, token, price, status} = orderDetail;
 
@@ -83,6 +104,10 @@ const MyOrders = () => {
                         <h2 className="bold--40"> <strong>Your Orders</strong></h2>
                         <p className="py-3 lit--20">Choose a category that suits you. We got your back!</p>
                     </div>
+                    <div className="text-center mb-3">
+                        <p style={{color: 'green', display: 'none'}} id="success">Successfully deleted your order!</p>
+                        <p style={{color: 'red', display: 'none'}} id="error">There is a problem deleting the order!</p>
+                    </div>
                 </Container>
                 <Container className="c--custom--2 mt-5">
                     <div className="service--table">
@@ -111,7 +136,7 @@ const MyOrders = () => {
                                     </Row>
                                 </div>
 
-                                {myOrder.map((detail) => (
+                                {myOrders.map((detail) => (
                                     <div className="card--data" data-aos="fade-left" data-aos-duration="1000">
                                         <div className="row mb-4">
                                             <Col sm={1} xs={4} className="profile">
@@ -141,7 +166,7 @@ const MyOrders = () => {
                                                 <p className="lit--22"><span className="bold--18" id="price-one">{detail.price} USD</span></p>
                                             </Col>
                                             <Col sm={2} xs={4} className="store">
-                                                <Link to="/cancel" className="bold--20" id="store-one">Cancel</Link>
+                                                <button className="bold--20" id="store-one" onClick={() => handleDeleteOrder(detail._id)}>Cancel</button>
                                             </Col>
                                             {/* <Col id="platform-one" className="collapse" aria-labelledby="heading-one" data-parent="#accordion">
                                                 
