@@ -85,10 +85,6 @@ const MyOrders = () => {
                                             <Col sm={3} xs={4} className="d-flex align-items-center justify-content-center" id="heading-one">
                                                 <div className="platform" id="accordion-one" data-toggle="collapse" data-target="#platform-one" aria-expanded="true" aria-controls="platform-one">
                                                     <p className="lit--22">{detail.orderId.slice(0, 10)}</p>
-                                                    {/* <span className="platform--toggle fa-stack fa-sm d-sm-none d-block">
-                                                        <i className="fas fa-circle fa-stack-2x"></i>
-                                                        <i className="fas fa-plus fa-stack-1x fa-inverse text-white" id="toggleIcon-one"></i>
-                                                    </span> */}
                                                 </div>
                                             </Col>
                                             <Col sm={2} xs={4} className="label">
@@ -106,9 +102,6 @@ const MyOrders = () => {
                                             <Col sm={2} xs={4} className="store">
                                                 <button className="bold--20" id="store-one" onClick={() => handleDeleteOrder(detail._id)}>Cancel</button>
                                             </Col>
-                                            {/* <Col id="platform-one" className="collapse" aria-labelledby="heading-one" data-parent="#accordion">
-                                                
-                                            </Col> */}
                                         </div>
                                     </div>
                                 ))}

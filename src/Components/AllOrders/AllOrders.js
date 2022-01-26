@@ -10,7 +10,7 @@ const AllOrders = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setAllOrders(data));
-    }, [])
+    }, [allOrders])
 
     //Deleting
     const handleDeleteOrder = id => {
@@ -24,8 +24,7 @@ const AllOrders = () => {
             .then(data => {
                 if(data.deletedCount > 0){
                     document.getElementById('success1').style.display = 'block';
-                    const remainingOrders = allOrders.filter(order => order._id !== id);
-                    setAllOrders(remainingOrders);
+                    setAllOrders(allOrders);
                 }else{
                     document.getElementById('error1').style.display = 'block';
                 }
@@ -37,7 +36,6 @@ const AllOrders = () => {
     const handleUpdateOrder = id => {
         const proceed = window.confirm('Are you sure you want to approve this order?');
         if(proceed) {
-            allOrders.status = false;
             const url = `https://glacial-springs-97945.herokuapp.com/update/${id}`;
             fetch(url, {
                 method: 'PUT',
@@ -49,8 +47,8 @@ const AllOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if(data.modifiedCount > 0){
-                    const remainingOrders = allOrders;
-                    setAllOrders(remainingOrders);
+                    document.getElementById('success2').style.display = 'block';
+                    setAllOrders(allOrders);
                 }else{
                     document.getElementById('error2').style.display = 'block';
                 }
@@ -110,10 +108,6 @@ const AllOrders = () => {
                                             <Col sm={3} xs={4} className="d-flex align-items-center justify-content-center" id="heading-one">
                                                 <div className="platform" id="accordion-one" data-toggle="collapse" data-target="#platform-one" aria-expanded="true" aria-controls="platform-one">
                                                     <p className="lit--22">{detail.token.slice(0, 10)}</p>
-                                                    {/* <span className="platform--toggle fa-stack fa-sm d-sm-none d-block">
-                                                        <i className="fas fa-circle fa-stack-2x"></i>
-                                                        <i className="fas fa-plus fa-stack-1x fa-inverse text-white" id="toggleIcon-one"></i>
-                                                    </span> */}
                                                 </div>
                                             </Col>
                                             <Col sm={2} xs={4} className="label">
@@ -132,9 +126,6 @@ const AllOrders = () => {
                                             <Col sm={2} xs={4} className="store">
                                                 <button className="bold--20" id="store-one" onClick={() => handleDeleteOrder(detail._id)}>Cancel</button>
                                             </Col>
-                                            {/* <Col id="platform-one" className="collapse" aria-labelledby="heading-one" data-parent="#accordion">
-                                                
-                                            </Col> */}
                                         </div>
                                     </div>
                                 ))}
