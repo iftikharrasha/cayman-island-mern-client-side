@@ -1,10 +1,5 @@
-### `Cayman Island - Tourism Booking Web App` [Live Link](https://cayman-island.web.app).
+### `Cayman Island - Server Side Code:` [GitHub Repo](https://github.com/iftikharrasha/cayman-island-mern-server-side).
 
-<p align="center">
-  <a href="https://cayman-island.web.app">
-    <img alt="Logo" src="./src/img/cayman.svg" width="100" />
-  </a>
-</p>
 <h1 align="center">
   Cayman Island
 </h1>
