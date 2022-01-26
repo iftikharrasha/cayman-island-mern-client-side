@@ -4,7 +4,7 @@ import Footer from '../../Components/Footer/Footer';
 import Header from '../../Components/Header/Header';
 import Hero from '../../Components/Hero/Hero';
 import Intro from '../../Components/Intro/Intro';
-import Offers from '../../Components/Offers/Offers';
+import Experiences from '../../Components/Experiences/Experiences';
 import Services from '../../Components/Services/Services';
 
 const Home = () => {
@@ -12,8 +12,8 @@ const Home = () => {
         <>
             <Header/>
             <Hero/>
+            <Experiences/>
             <Services/>
-            <Offers/>
             <Intro/>
             <Faq/>
             <Footer/>

@@ -9,18 +9,18 @@ import Header from './Components/Header/Header.js';
 import MyOrders from './Components/MyOrders/MyOrders.js';
 import AllOrders from './Components/AllOrders/AllOrders.js';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder.js';
-import AddOffer from './Components/AddOffer/AddOffer.js';
-import Login from './Components/Login/Login.js';
-import SignUp from './Components/SignUp/SignUp.js';
+import AddExp from './Components/AddExp/AddExp.js';
 import Footer from './Components/Footer/Footer.js';
-import NotFound from './Components/NotFound/NotFound.js';
-import About from './Components/About/About.js';
-import AllOffers from './Components/AllOffers/AllOffers.js';
 import AuthProvider from './contexts/AuthProvider/AuthProvider.js';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute.js';
 import Home from './Pages/Home/Home.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sass/style.css';
-import PrivateRoute from './Pages/PrivateRoute/PrivateRoute.js';
+import Signin from './Pages/Login/Signin.js';
+import Signup from './Pages/Signup/Signup.js';
+import About from './Pages/About/About.js';
+import NotFound from './Pages/NotFound/NotFound.js';
+import Explore from './Pages/Explore/Explore.js';
 
 function App() {
     return (
@@ -38,24 +38,16 @@ function App() {
                                     <Home/>
                                 </Route>
                                 <Route path="/login">
-                                    <Header/>
-                                    <Login/>
-                                    <Footer/>
+                                    <Signin/>
                                 </Route>
                                 <Route path="/signup">
-                                    <Header/>
-                                    <SignUp/>
-                                    <Footer/>
+                                    <Signup/>
                                 </Route>
                                 <Route path="/about">
-                                    <Header/>
                                     <About/>
-                                    <Footer/>
                                 </Route>
-                                <Route path="/all-offers">
-                                    <Header/>
-                                    <AllOffers/>
-                                    <Footer/>
+                                <Route path="/explore">
+                                    <Explore/>
                                 </Route>
                                 <PrivateRoute path="/all-orders">
                                     <Header/>
@@ -72,9 +64,9 @@ function App() {
                                     <PlaceOrder/>
                                     <Footer/>
                                 </PrivateRoute>
-                                <PrivateRoute path="/add-offers/:addedBy">
+                                <PrivateRoute path="/add-experience/:addedBy">
                                     <Header/>
-                                    <AddOffer/>
+                                    <AddExp/>
                                     <Footer/>
                                 </PrivateRoute>
                                 <Route path="*">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
-import initializeFirebase from "../Pages/Signin/Firebase/firebase.init";
+import initializeFirebase from "../Pages/Login/Firebase/firebase.init";
 import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 initializeFirebase();
@@ -120,7 +120,7 @@ const useFirebase = () => {
     }, [auth])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${loggedInUser.email}`)
+        fetch(`https://glacial-springs-97945.herokuapp.com/users/${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [loggedInUser.email])
@@ -138,7 +138,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users-put', {
+        fetch('https://glacial-springs-97945.herokuapp.com/users-put', {
             method: method,
             headers: {
                 'content-type': 'application/json'

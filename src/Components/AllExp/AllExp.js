@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Pagination from '../Pagination/Pagination';
-import SingleOffer from '../SingleOffer/SingleOffer';
+import SingleExp from '../SingleExp/SingleExp';
 
 const AllOffers = () => {
     const [offers, setOffers] = useState([]);
@@ -30,7 +30,7 @@ const AllOffers = () => {
                 <Container className="c--custom">
                     <Row className="pt-5">
                         <Col md={12} className="text-center">
-                            <h2 className="bold--40 mb-4"> <strong>All Offers</strong></h2>
+                            <h2 className="bold--40 mb-4"> <strong>Explore Experiences</strong></h2>
                         </Col>
                     </Row>
                                         
@@ -41,7 +41,7 @@ const AllOffers = () => {
                                         <div className="inner-form">
                                             <div className="form-group">
                                                 <span className="fa fa-search form-control-feedback" aria-hidden="true"></span>
-                                                <input id="keyword" type="text" className="form-control fc-input" placeholder="SEARCH FOR OFFERS . . ." onChange={event => setSearchTerm(event.target.value)}/>
+                                                <input id="keyword" type="text" className="form-control fc-input" placeholder="SEARCH FOR MORE . . ." onChange={event => setSearchTerm(event.target.value)}/>
                                             </div>
                                         </div>
                                     </form>
@@ -55,7 +55,7 @@ const AllOffers = () => {
                                                 return offer;
                                             }
                                         }).slice(pagination.start,pagination.end).map(offer =>
-                                                <SingleOffer offer={offer} key={offer._id}/>
+                                                <SingleExp offer={offer} key={offer._id}/>
                                             )
                                     }
                                 </div>

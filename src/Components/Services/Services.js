@@ -32,12 +32,12 @@ const Services = () => {
         },
         {
             id: 5,
-            name: "Popular",
+            name: "Tent",
             icon: popular,
         },
         {
             id: 6,
-            name: "budget",
+            name: "Budget",
             icon: budget,
         },
     ]
@@ -47,14 +47,12 @@ const Services = () => {
             <section className="get-service py-5" id="getservice">
                 <Container className="c--custom">
                         <Row>
-                            <Col md={12} className="text-center mt-5">
-                                <h2 className="bold--40"> <strong>Our Services</strong></h2>
-                            </Col>
-                            <Col md={12}>
+                            <Col md={8} className="text-center mt-5">
+                                <h2 className="bold--40"> <strong>Popular Services</strong></h2>
                                 <Row className="d-flex align-items-center justify-content-center">
 
                                 {services.map((service) => (
-                                    <Col xl={2} sm={4} className="d-flex align-items-center justify-content-center p-4" key={service.id}>
+                                    <Col sm={4} className="d-flex align-items-center justify-content-center p-4" key={service.id}>
                                         <div className="services">
                                             <div className="serve-item text-center">
                                                 <img src={service.icon} className="py-3" alt="rentals"/>
@@ -63,6 +61,31 @@ const Services = () => {
                                         </div>
                                     </Col>
                                 ))}
+
+                                </Row>
+                            </Col>
+                            <Col md={4} className="text-center mt-5">
+                                <h2 className="bold--40"> <strong>Top Rated</strong></h2>
+                                <Row className="d-flex align-items-center justify-content-center pt-5">
+
+                                    <Col sm={12} className="pb-5">
+                                        <h5>Camping (12)</h5>
+                                    </Col>
+                                    <Col sm={12} className="pb-5">
+                                        <h5>Guide (8)</h5>
+                                    </Col>
+                                    <Col sm={12} className="pb-5">
+                                        <h5>Beaches (5)</h5>
+                                    </Col>
+                                    <Col sm={12} className="pb-5">
+                                        <h5>Budget (4)</h5>
+                                    </Col>
+                                    <Col sm={12} className="pb-5">
+                                        <h5>Rides (1)</h5>
+                                    </Col>
+                                    <Col sm={12} className="pb-5">
+                                        <h5>Tent (0)</h5>
+                                    </Col>
 
                                 </Row>
                             </Col>

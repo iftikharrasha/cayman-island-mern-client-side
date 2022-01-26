@@ -28,24 +28,11 @@ const Header = () => {
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="ml-lg-auto medi--20 menu">
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/home">Home</Nav.Link>
-                                    <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-offers">All Offers</Nav.Link>
-                                    { loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-orders">All Orders</Nav.Link>
+                                    <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/explore">Explore More</Nav.Link>
+                                    { loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-orders">Dashboard</Nav.Link>
                                      : <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/login">All Orders</Nav.Link>}
                                     
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/about">About</Nav.Link>
-                                    {
-                                    loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to={`/add-offers/${loggedInUser.name}`}>Add Offers</Nav.Link>
-                                                            :
-                                                            <Dropdown>
-                                                                <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center mr-lg-4">
-                                                                    <i className="fa-solid fa-cart-arrow-down"></i>
-                                                                </Dropdown.Toggle>
-
-                                                                <Dropdown.Menu>
-                                                                    <p to="/ride-search" className="dropdown-item lit--16">Your Cart is Empty! <br /> Please login.</p>
-                                                                </Dropdown.Menu>
-                                                            </Dropdown>
-                                    }
                                     {
                                     loggedInUser.isSignedIn ? <Dropdown>
                                                                 <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center">
@@ -56,8 +43,8 @@ const Header = () => {
                                                                 </Dropdown.Toggle>
 
                                                                 <Dropdown.Menu>
-                                                                    <Link to={`/my-orders/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Manage My Orders</Link>
-                                                                    <Link to={`/add-offers/${loggedInUser.name}`} className="dropdown-item lit--16">Add Offers</Link>
+                                                                    <Link to={`/my-orders/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Manage Profile</Link>
+                                                                    <Link to={`/add-experience/${loggedInUser.name}`} className="dropdown-item lit--16">Share Experience</Link>
                                                                     <Link to="/" className="dropdown-item lit--16" onClick={logoutUser}>Sign Out</Link>
                                                                 </Dropdown.Menu>
                                                             </Dropdown> : 

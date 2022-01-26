@@ -15,7 +15,7 @@ const SingleOffer = (props) => {
                 <p className="lit--16">{desc.slice(0, 100)} . . .</p>
                 <button className="btn bold--22">
                     <Link to={"/place-order/"+_id}>
-                        Order Now
+                        Read More
                         <span>
                             <img src={arrow} alt="arrow" className="img-fluid pl-2"/>
                         </span>
