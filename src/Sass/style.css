@@ -832,6 +832,121 @@
   }
 }
 
+.comment__card {
+  background-color: #0000001a;
+  color: #121212;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.comment__card .comment__item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comment__card .comment__item .comment__desc {
+  width: 100%;
+}
+
+.comment__card .comment__item .comment__desc .desc__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.comment__card .comment__item .comment__desc .desc__top .comment__img {
+  margin-right: 1rem;
+}
+
+.comment__card .comment__item .comment__desc .desc__top .comment__img img {
+  width: 4rem;
+  height: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.comment__card .comment__item .comment__desc .desc__top .user {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.comment__card .comment__item .comment__desc .desc__top .verified {
+  color: green;
+  font-size: .875rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-left: 0.5rem;
+}
+
+.comment__card .comment__item .comment__desc .desc__top .story-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.comment__card .comment__item .comment__desc .desc__top .story-rating .time {
+  margin-left: 1rem;
+}
+
+.comment textarea {
+  width: 100%;
+  background: #fff;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  border: none;
+  color: #121212;
+  margin: 1rem 0;
+  padding: 1.25rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.story-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.story-rating h3 {
+  margin-right: 1rem;
+}
+
+.story-rating span i {
+  font-size: 1.5rem;
+  color: green;
+}
+
 .login {
   padding: 3.125rem;
 }

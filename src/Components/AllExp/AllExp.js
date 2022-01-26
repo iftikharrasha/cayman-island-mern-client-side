@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Pagination from '../Pagination/Pagination';
 import SingleExp from '../SingleExp/SingleExp';
 
-const AllOffers = () => {
+const AllExp = () => {
     const [offers, setOffers] = useState([]);
     useEffect(() => {
         fetch('https://glacial-springs-97945.herokuapp.com/all-offers')
@@ -72,4 +72,4 @@ const AllOffers = () => {
     );
 };
 
-export default AllOffers;
+export default AllExp;

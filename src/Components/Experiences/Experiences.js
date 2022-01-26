@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import SingleExp from '../SingleExp/SingleExp';
 
-const Offers = () => {
+const Experiences = () => {
     const [offers, setOffers] = useState([]);
     useEffect(() => {
         fetch('https://glacial-springs-97945.herokuapp.com/all-offers')
@@ -31,4 +31,4 @@ const Offers = () => {
     );
 };
 
-export default Offers;
+export default Experiences;

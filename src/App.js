@@ -8,7 +8,6 @@ import ScrollToTop from './ScrollToTop.js';
 import Header from './Components/Header/Header.js';
 import MyOrders from './Components/MyOrders/MyOrders.js';
 import AllOrders from './Components/AllOrders/AllOrders.js';
-import PlaceOrder from './Components/PlaceOrder/PlaceOrder.js';
 import AddExp from './Components/AddExp/AddExp.js';
 import Footer from './Components/Footer/Footer.js';
 import AuthProvider from './contexts/AuthProvider/AuthProvider.js';
@@ -21,6 +20,7 @@ import Signup from './Pages/Signup/Signup.js';
 import About from './Pages/About/About.js';
 import NotFound from './Pages/NotFound/NotFound.js';
 import Explore from './Pages/Explore/Explore.js';
+import ExpDetails from './Components/ExpDetails/ExpDetails.js';
 
 function App() {
     return (
@@ -59,9 +59,9 @@ function App() {
                                     <MyOrders/>
                                     <Footer/>
                                 </PrivateRoute>
-                                <PrivateRoute path="/place-order/:orderId">
+                                <PrivateRoute path="/blog-details/:orderId">
                                     <Header/>
-                                    <PlaceOrder/>
+                                    <ExpDetails/>
                                     <Footer/>
                                 </PrivateRoute>
                                 <PrivateRoute path="/add-experience/:addedBy">

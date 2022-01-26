@@ -3,16 +3,16 @@ import { useParams } from 'react-router';
 import axios from 'axios';
 import { useState } from 'react';
 
-const AddOffer = () => {
+const AddExp = () => {
     const date = new Date().toISOString().slice(0, 10);
     const [img, setImg] = useState(''); 
 
     const { addedBy } = useParams();
     const titleRef = useRef();
     const catRef = useRef();
-    // const imgRef = useRef();
     const descRef = useRef();
     const priceRef = useRef();
+    const locationRef = useRef();
 
     const handleImageUpload = (e) => {
         const imageData = new FormData();
@@ -35,8 +35,9 @@ const AddOffer = () => {
         // const img = imgRef.current.value;
         const desc = descRef.current.value;
         const price = priceRef.current.value;
+        const location = locationRef.current.value;
 
-        const newUser = {title, category, img, desc, price, addedBy, date};
+        const newUser = {title, category, img, desc, price, location, addedBy, date};
         fetch('https://glacial-springs-97945.herokuapp.com/add-offers', {
             method: 'POST',
             headers: {
@@ -47,7 +48,6 @@ const AddOffer = () => {
         .then(res => res.json())
         .then(data =>{
             if(data.insertedId){
-                // alert('Successfully added a post!');
                 document.getElementById('success').style.display = 'block';
                 e.target.reset();
             }else{
@@ -72,40 +72,43 @@ const AddOffer = () => {
                         <form className="form" onSubmit={handleAddOffer}>
                             <div className="inputs my-4">
                                 <div className="input-field">
-                                    <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit--14" type="text" ref={titleRef} name="title" placeholder="Enter post Title" autoComplete="on" required/>
+                                    <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit--14" type="text" ref={titleRef} name="title" placeholder="Enter Post Title" autoComplete="on" required/>
                                     <div className="input-icon">
                                         <i class="fa fa-pencil-square-o i-envelope" aria-hidden="true"></i>
                                     </div>
                                 </div>
+
                                 <div className="input-field my-3">
                                     <input type="text" ref={catRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="cat" placeholder="Enter Category: popular, camping etc." autoComplete="on" required/>
                                     <div className="input-icon">
                                         <i class="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                     </div>
                                 </div>
-                                {/* <div className="input-field my-3">
-                                    <input type="text" ref={imgRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="img" placeholder="Enter Image Link" autoComplete="on" required/>
-                                    <div className="input-icon">
-                                        <i class="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
-                                    </div>
-                                </div> */}
                                 
                                 <span className="lit--14">Upload an image:</span>
                                 <div className="input-field mb-3">
-                                    <input type="file" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="img" multiple={false} onChange={handleImageUpload} placeholder="Enter The Outlet Image"/>
+                                    <input type="file" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="img" multiple={false} onChange={handleImageUpload} placeholder="Enter Post Image"/>
                                     <div className="input-icon">
                                         <i className="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                     </div>
                                 </div>
 
                                 <div className="input-field my-3">
-                                    <input type="text" ref={priceRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="price" placeholder="Enter post Starting Price" autoComplete="on" required/>
+                                    <input type="text" ref={priceRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="price" placeholder="Enter Post Starting Price" autoComplete="on" required/>
                                     <div className="input-icon">
                                         <i class="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                     </div>
                                 </div>
+
                                 <div className="input-field my-3">
-                                    <textarea rows="4" cols="40" ref={descRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="desc" placeholder="Enter post Description" autoComplete="on" required></textarea>
+                                    <input type="text" ref={locationRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="price" placeholder="Enter Location" autoComplete="on" required/>
+                                    <div className="input-icon">
+                                        <i class="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+
+                                <div className="input-field my-3">
+                                    <textarea rows="4" cols="40" ref={descRef} className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="desc" placeholder="Enter Post Description" autoComplete="on" required></textarea>
                                     <div className="input-icon">
                                         <i class="fa fa-pencil-square-o i-key" aria-hidden="true"></i>
                                     </div>
@@ -122,4 +125,4 @@ const AddOffer = () => {
     );
 };
 
-export default AddOffer;
+export default AddExp;
