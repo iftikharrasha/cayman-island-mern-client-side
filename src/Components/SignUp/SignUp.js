@@ -3,58 +3,47 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import google from '../../img/google.svg';
-
-import firebase from "firebase/compat/app";
-import {UserContext} from "../../App";
+import useAuth from '../../hooks/useAuth';
 
 const SignUp = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loginData, setLoginData] = useState({});
+    const { registerUser, signInWithGoogle, isLoading } = useAuth();
     const [newUser, setNewUser] = useState(false);
 
     const history = useHistory();
     const location = useLocation();
-    const { from } = location.state || { from: { pathname: "/login" } };
 
     const handleGoogleSignIn = () => {
-
+        signInWithGoogle(location, history);
     }
 
     const handleNormalAuth = (event) => {
-        if(newUser && loggedInUser.email && loggedInUser.password){
-            firebase.auth().createUserWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
-              .then((res) => { 
-                const newUserInfo = {...loggedInUser};
-                newUserInfo.error = '';
-                newUserInfo.success = true;
-                setLoggedInUser(newUserInfo);
-                history.replace(from);
-              })
-              .catch((error) => {
-                const newUserInfo = {...loggedInUser};
-                newUserInfo.error = error.message;
-                newUserInfo.success = false;
-                setLoggedInUser(newUserInfo);
-              });
+        if(newUser && loginData.email && loginData.password && loginData.name){
+            registerUser(loginData.email, loginData.password, loginData.name, location, history);
         }
-        event.preventDefault(); //preventing reloading the page
+        event.preventDefault();
     }
 
     //form validation part
-    const handleBlur = (event) => {
-        // console.log(event.target.name, event.target.value);
-
+    const handleOnBlur = (event) => {
+        const field = event.target.name;
+        const value = event.target.value;
         let isFormValid;
-        if(event.target.name === 'email'){
+
+        if(field === 'name'){
+            isFormValid = true;
+        }
+
+        if(field === 'email'){
             const regexEm = /\S+@\S+\.\S+/;
-            isFormValid = regexEm.test(event.target.value);
-            // console.log(isFormValid);
+            isFormValid = regexEm.test(value);
 
             if(!isFormValid){
                 const wrapper = document.getElementById('valid-icon-email');
                 wrapper.innerHTML = '';
                 const span = document.createElement('span');
                 span.innerHTML = `
-                    <i class="fas fa-times-circle i-wrong" aria-hidden="true"></i>
+                    <i className="fas fa-times-circle i-wrong" aria-hidden="true"></i>
                 `;
                 wrapper.appendChild(span);
             }else{
@@ -62,16 +51,16 @@ const SignUp = () => {
                 wrapper.innerHTML = '';
                 const span = document.createElement('span');
                 span.innerHTML = `
-                    <i class="fas fa-check-circle i-right" aria-hidden="true"></i>
+                    <i className="fas fa-check-circle i-right" aria-hidden="true"></i>
                 `;
                 wrapper.appendChild(span);
             }
         }
       
-        if(event.target.name === 'password'){
+        if(field === 'password'){
             const regexPass = /\d{1}/;
-            const isPassNumber = regexPass.test(event.target.value);
-            const isPassLength = event.target.value.length > 6;
+            const isPassNumber = regexPass.test(value);
+            const isPassLength = value.length > 5;
       
             isFormValid = isPassLength && isPassNumber;
             // console.log(isFormValid);
@@ -81,7 +70,7 @@ const SignUp = () => {
                 wrapper.innerHTML = '';
                 const span = document.createElement('span');
                 span.innerHTML = `
-                    <i class="fas fa-times-circle i-wrong" aria-hidden="true"></i>
+                    <i className="fas fa-times-circle i-wrong" aria-hidden="true"></i>
                 `;
                 wrapper.appendChild(span);
             }else{
@@ -89,16 +78,16 @@ const SignUp = () => {
                 wrapper.innerHTML = '';
                 const span = document.createElement('span');
                 span.innerHTML = `
-                    <i class="fas fa-check-circle i-right" aria-hidden="true"></i>
+                    <i className="fas fa-check-circle i-right" aria-hidden="true"></i>
                 `;
                 wrapper.appendChild(span);
             }
         }
           
         if(isFormValid){
-            const newUserInfo = {...loggedInUser};
-            newUserInfo[event.target.name] = event.target.value;
-            setLoggedInUser(newUserInfo);
+            const newUserInfo = {...loginData};
+            newUserInfo[field] = value;
+            setLoginData(newUserInfo);
             setNewUser(true);
         }
     }
@@ -114,48 +103,50 @@ const SignUp = () => {
                             </b>
                         </h2>
                         </div>
-                        <form className="form" onSubmit={handleNormalAuth}>
-                            <div className="inputs my-4">
-                                <div className="input-field">
-                                    <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit-14" type="text" name="name" onChange={handleBlur} placeholder="Enter Your name" autoComplete="on" required/>
-                                    <div className="input-icon">
-                                        <i className="fa fa-user-plus i-envelope" aria-hidden="true"></i>
-                                    </div>
 
-                                </div>
-                                <div className="input-field my-3">
-                                    <input type="email" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="email" onChange={handleBlur} placeholder="Enter Your email" autoComplete="on" required/>
-                                    <div className="input-icon">
-                                        <i className="fa fa-envelope i-user" aria-hidden="true"></i>
-                                    </div>
-                                    {/* validation icon check */}
-                                    <div className="input-field" id="valid-icon-email"></div>
-                                </div>
-                                <div className="input-field my-3">
-                                    <input type="password" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="password" onChange={handleBlur} placeholder="Enter Password" autoComplete="on" required/>
-                                    <div className="input-icon">
-                                        <i className="fa fa-key i-key" aria-hidden="true"></i>
-                                    </div>
-                                    {/* validation icon check */}
-                                    <div className="input-field" id="valid-icon-pass"></div>
-                                </div>
-                                <div className="input-field my-3">
-                                    <input type="password" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="re-password" placeholder="Confirm Password" autoComplete="on" required/>
-                                    <div className="input-icon">
-                                        <i className="fa fa-key i-key" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-center">
-                                <button className="signin-btn">Create an account
-                                </button>
-                            </div>
-                            <div className="mt-4 text-center lit-14">Already have an account?
-                                <Link to="/login" className="ml-1 lit-14"><u>Login</u>
-                                </Link>
-                            </div>
-                        </form>
+                            {
+                                !isLoading && <form className="form" onSubmit={handleNormalAuth}>
+                                        <div className="inputs my-4">
+                                            <div className="input-field">
+                                                <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit-14" type="text" name="name" onChange={handleOnBlur} placeholder="Enter Your name" autoComplete="on" required/>
+                                                <div className="input-icon">
+                                                    <i className="fa fa-user-plus i-envelope" aria-hidden="true"></i>
+                                                </div>
 
+                                            </div>
+                                            <div className="input-field my-3">
+                                                <input type="email" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="email" onChange={handleOnBlur} placeholder="Enter Your email" autoComplete="on" required/>
+                                                <div className="input-icon">
+                                                    <i className="fa fa-envelope i-user" aria-hidden="true"></i>
+                                                </div>
+                                                {/* validation icon check */}
+                                                <div className="input-field" id="valid-icon-email"></div>
+                                            </div>
+                                            <div className="input-field my-3">
+                                                <input type="password" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="password" onChange={handleOnBlur} placeholder="Enter Password" autoComplete="on" required/>
+                                                <div className="input-icon">
+                                                    <i className="fa fa-key i-key" aria-hidden="true"></i>
+                                                </div>
+                                                {/* validation icon check */}
+                                                <div className="input-field" id="valid-icon-pass"></div>
+                                            </div>
+                                            <div className="input-field my-3">
+                                                <input type="password" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="re-password" placeholder="Confirm Password" autoComplete="on" required/>
+                                                <div className="input-icon">
+                                                    <i className="fa fa-key i-key" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="d-flex align-items-center justify-content-center">
+                                            <button className="signin-btn">Create an account
+                                            </button>
+                                        </div>
+                                        <div className="mt-4 text-center lit-14">Already have an account?
+                                            <Link to="/login" className="ml-1 lit-14"><u>Login</u>
+                                            </Link>
+                                        </div>
+                                    </form>
+                            }
                     </div>
                 </div>
 

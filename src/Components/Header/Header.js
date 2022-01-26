@@ -1,35 +1,12 @@
-import React, { useContext } from 'react';
+import { React } from 'react';
 import logo from '../../img/cayman.svg';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Link } from 'react-router-dom';
-import firebase from "firebase/compat/app";
-
-import {UserContext} from "../../App";
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
-    const handleSignOut = () => {
-        firebase.auth().signOut()
-        .then((res) => {
-          localStorage.removeItem('token');
-          localStorage.removeItem('uid');
-          localStorage.removeItem('uname');
-          const signedOutUser = {
-            isSignedIn: false,
-            name: '',
-            email: '',
-            photo: '',
-            tokenId: '',
-            success: false,
-            error: ''
-          }
-          setLoggedInUser(signedOutUser);
-        }).catch((error) => {
-            console.log(error);
-        });
-      }
+    const { loggedInUser, logoutUser } = useAuth();
 
     return (
         <>
@@ -81,7 +58,7 @@ const Header = () => {
                                                                 <Dropdown.Menu>
                                                                     <Link to={`/my-orders/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Manage My Orders</Link>
                                                                     <Link to={`/add-offers/${loggedInUser.name}`} className="dropdown-item lit--16">Add Offers</Link>
-                                                                    <Link to="/" className="dropdown-item lit--16" onClick={handleSignOut}>Sign Out</Link>
+                                                                    <Link to="/" className="dropdown-item lit--16" onClick={logoutUser}>Sign Out</Link>
                                                                 </Dropdown.Menu>
                                                             </Dropdown> : 
                                                             <Link to="/login" className="btn-tag-1 bold--16"><i className="fa fa fa-user"></i><span className="ml-2">Login</span></Link>

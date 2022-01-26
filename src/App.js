@@ -1,16 +1,11 @@
-import { React, createContext, useState } from 'react';
+import { React } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 import ScrollToTop from './ScrollToTop.js';
-import jwt_decode from "jwt-decode";
 import Header from './Components/Header/Header.js';
-import Hero from './Components/Hero/Hero.js';
-import Services from './Components/Services/Services.js';
-import Offers from './Components/Offers/Offers.js';
-import Intro from './Components/Intro/Intro.js';
 import MyOrders from './Components/MyOrders/MyOrders.js';
 import AllOrders from './Components/AllOrders/AllOrders.js';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder.js';
@@ -18,71 +13,29 @@ import AddOffer from './Components/AddOffer/AddOffer.js';
 import Login from './Components/Login/Login.js';
 import SignUp from './Components/SignUp/SignUp.js';
 import Footer from './Components/Footer/Footer.js';
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import NotFound from './Components/NotFound/NotFound.js';
-import Faq from './Components/Faq/Faq.js';
 import About from './Components/About/About.js';
+import AllOffers from './Components/AllOffers/AllOffers.js';
+import AuthProvider from './contexts/AuthProvider/AuthProvider.js';
+import Home from './Pages/Home/Home.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sass/style.css';
-import AllOffers from './Components/AllOffers/AllOffers.js';
-
-export const UserContext = createContext();
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute.js';
 
 function App() {
-    const getDecodedUser = () => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            return {
-                isSignedIn: false,
-                name: '',
-                email: '',
-                photo: '',
-                tokenId: '',
-                success: false,
-                error: ''
-            };
-        }
-        const {name, email, picture} = jwt_decode(token);
-        const uidDecoded = localStorage.getItem('uid');
-        const unameDecoded = localStorage.getItem('uname');
-        const decodedUser = {
-            isSignedIn: true,
-            email: email,
-            photo: picture,
-            tokenId: uidDecoded || unameDecoded,
-            success: true,
-            name: (name.split(' '))[0]
-        }
-        return decodedUser;
-    }
-
-    const [loggedInUser, setLoggedInUser] = useState(getDecodedUser());
-
     return (
         <div className="App">
 
-            <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+            <AuthProvider>
                 <Router>
                     <ScrollToTop>
                         <Route render={({location}) => (
                             <Switch location={location}>
                                 <Route exact path="/">
-                                    <Header/>
-                                    <Hero/>
-                                    <Services/>
-                                    <Offers/>
-                                    <Intro/>
-                                    <Faq/>
-                                    <Footer/>
+                                    <Home/>
                                 </Route>
                                 <Route path="/home">
-                                    <Header/>
-                                    <Hero/>
-                                    <Services/>
-                                    <Offers/>
-                                    <Intro/>
-                                    <Faq/>
-                                    <Footer/>
+                                    <Home/>
                                 </Route>
                                 <Route path="/login">
                                     <Header/>
@@ -131,8 +84,7 @@ function App() {
                         )} />
                     </ScrollToTop>
                 </Router>
-            </UserContext.Provider>
-
+            </AuthProvider>
         </div>
     );
     }

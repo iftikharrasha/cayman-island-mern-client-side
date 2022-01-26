@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
+// import preloader from '../../img/preloader.gif';
 import { Redirect, Route } from 'react-router-dom';
-import {UserContext} from "../../App";
+import useAuth from '../../hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
+	const { loggedInUser, isLoading } = useAuth();
+	// if (isLoading) { return <div className="loading">
+	// 							<img src={preloader} alt={preloader} className="img-fluid"/>
+	// 						</div> }
     return (
         <Route
 			{...rest}
