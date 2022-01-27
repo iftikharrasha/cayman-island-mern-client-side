@@ -3,6 +3,7 @@
 <h1 align="center">
   Cayman Island
 </h1>
+
 <p align="center">
   Built using MERN Stack with <a href="https://reactjs.org/" target="_blank">React JS</a> and SASS for front end, <a href="https://expressjs.com/" target="_blank">EXPRESS JS</a> for backend, deployed the server side on <a href="https://www.heroku.com/" target="_blank">Heroku</a> and hosted the on <a href="https://firebase.google.com/" target="_blank">Firebase</a> with firebase authentication.
 </p>
@@ -43,14 +44,16 @@ A quick look at the top-level files hierarchy.
   ├── public 
   ├── src
       └── Components
-          └── About
-            ├── About.js
-          └── AddOffer
-            ├── AddOffer.js
-          └── AllOffers
-            ├── AllOffers.js
-          └── AllOrders
-            ├── AllOrders.js
+          └── AddExp
+            ├── AddExp.js
+          └── AdminForm
+            ├── AdminForm.js
+          └── AddExp
+            ├── AddExp.js
+          └── AllExp
+            ├── AllExp.js
+          └── ExpDetails
+            ├── ExpDetails.js
           └── Faq
             ├── Faq.js
           └── Footer
@@ -61,14 +64,16 @@ A quick look at the top-level files hierarchy.
             ├── Hero.js
           └── Login
             ├── Login.js
-          └── MyOrders
-            ├── MyOrders.js
+          └── MyPosts
+            ├── MyPosts.js
+          └── ManageExp
+            ├── ManageExp.js
           └── NotFound
             ├── NotFound.js
-          └── OfferDetails
-            ├── OfferDetails.js
-          └── Offers
-            ├── Offers.js
+          └── ExpDetails
+            ├── ExpDetails.js
+          └── Experiences
+            ├── Experiences.js
           └── Pagination
             ├── Pagination.js
           └── PlaceOrder
@@ -79,8 +84,14 @@ A quick look at the top-level files hierarchy.
             ├── Services.js
           └── SignUp
             ├── SignUp.js
-          └── SingleOffer
-            ├── SingleOffer.js
+          └── SingleExp
+            ├── SingleExp.js
+          └── TheLand
+            ├── TheLand.js
+          └── UsersTable
+            ├── UsersTable.js
+          └── Welcome
+            ├── Welcome.js
       └── fonts
       └── img
       └── Sass
