@@ -46,15 +46,15 @@ const Hero = () => {
                                     <Slider {...settings}>
                                         <div>
                                             <h1 className="text-center bold--55" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">Find your paradise in <br /> <span>Cayman Island</span></h1>
-                                            <p className="text-center mt-2 bold--24" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-once="true">Let’s start your journey with us, your dream will come true!</p>
+                                            <p className="text-center mt-2 bold--24" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-once="true">Let’s start your journey with us, your dream will come true! Become an ambassador of the Cayman Islands, enjoy holiday.</p>
                                         </div>
                                         <div>
-                                            <h1 className="text-center bold--55" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">Find your paradise in <br /> <span>Cayman Island</span></h1>
-                                            <p className="text-center mt-2 bold--24" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-once="true">Let’s start your journey with us, your dream will come true!</p>
+                                            <h1 className="text-center bold--55" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">Global Citizen <br /> <span>Concierge</span></h1>
+                                            <p className="text-center mt-2 bold--24" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-once="true">Apply to become a Global Citizen and trade in your WFH routine for sun, sand, sea and safety in Cayman for up to two yea</p>
                                         </div>
                                         <div>
-                                            <h1 className="text-center bold--55" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">Find your paradise in <br /> <span>Cayman Island</span></h1>
-                                            <p className="text-center mt-2 bold--24" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-once="true">Let’s start your journey with us, your dream will come true!</p>
+                                            <h1 className="text-center bold--55" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">Write Your <br /> <span>Cayman Story</span></h1>
+                                            <p className="text-center mt-2 bold--24" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0" data-aos-once="true">Here, you can pamper your body, relax your mind and soothe your soul while on vacation. Reference our Wellness Guide here.</p>
                                         </div>
                                     </Slider>
                                 </div>
