@@ -11,6 +11,8 @@ const AllExp = () => {
         .then(data => setExperiences(data));
     }, [])
 
+    const experienceFiltered = experiences.filter(experience => experience.status === false || experience.status === undefined);
+
     const [searchTerm, setSearchTerm] = useState('');
 
     const [showPerPage, setShowPerPage] = useState(9);
@@ -48,7 +50,7 @@ const AllExp = () => {
                                 </Col>  
                                 <div className="offer--cards">
                                     {
-                                        experiences.filter(experience => {
+                                        experienceFiltered.filter(experience => {
                                             if(searchTerm == ""){
                                                 return experience;
                                             }else if(experience.category.toLowerCase().includes(searchTerm.toLowerCase()) || experience.title.toLowerCase().includes(searchTerm.toLowerCase())){

@@ -12,7 +12,6 @@ const Related = (props) => {
     }, [])
 
     const relatedExp = experiences.filter(experience => experience.category === thisExp.category && experience._id !== props.id);
-    console.log(relatedExp);
     return (
         <>
             <section className="offers py-5" id="offers">

@@ -6,7 +6,6 @@ import moment from 'moment';
 import useAuth from '../../hooks/useAuth';
 import Related from '../Related/Related';
 import { Link } from 'react-router-dom';
-import arrow from '../../img/arrow.svg';
 
 const ExpDetails = () => {
     const { orderId } = useParams();
@@ -119,7 +118,7 @@ const ExpDetails = () => {
 
                             <Col md={12} className="mt-5 text-center share">
                                 <button className="btn bold--22">
-                                    <Link to={`/add-experience/${loggedInUser.name}`}>
+                                    <Link to={`/add-experience/${(loggedInUser.name.toLowerCase().split(' '))[0]}`}>
                                         Share Experience
                                         <i className="fa fa-plus ml-2"></i>
                                     </Link>

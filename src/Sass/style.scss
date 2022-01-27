@@ -2,10 +2,10 @@
 @import './header';
 @import './hero';
 @import './services';
-@import './offers';
-@import './offerdetails';
-@import './orders';
-@import './placeorder';
+@import './experiences';
+@import './expdetails';
+@import './manage';
+@import './placereview';
 @import './login';
 @import './intro';
 @import './faq';
@@ -13,6 +13,8 @@
 @import './footer';
 @import './notfound';
 @import './pagination';
+@import './sidebar';
+@import './contents';
 
 * {
     margin: 0;

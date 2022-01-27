@@ -32,12 +32,12 @@ const AddExp = () => {
     const handleAddOffer = e => {
         const title = titleRef.current.value;
         const category = catRef.current.value;
-        // const img = imgRef.current.value;
         const desc = descRef.current.value;
         const price = priceRef.current.value;
         const location = locationRef.current.value;
+        const status = true;
 
-        const newUser = {title, category, img, desc, price, location, addedBy, date};
+        const newUser = {title, category, img, desc, price, location, addedBy, date, status};
         fetch('https://glacial-springs-97945.herokuapp.com/add-experience', {
             method: 'POST',
             headers: {

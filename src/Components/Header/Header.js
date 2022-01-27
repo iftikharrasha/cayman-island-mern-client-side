@@ -29,22 +29,21 @@ const Header = () => {
                                 <Nav className="ml-lg-auto medi--20 menu">
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/home">Home</Nav.Link>
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/explore">Explore More</Nav.Link>
-                                    { loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/all-orders">Dashboard</Nav.Link>
-                                     : <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/login">All Orders</Nav.Link>}
-                                    
                                     <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/about">About</Nav.Link>
+                                    { loggedInUser.isSignedIn ? <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/dashboard">Dashboard</Nav.Link>
+                                     : <Nav.Link className="mr-lg-4 bold--17" as={Link} to="/login">Dashboard</Nav.Link>}
                                     {
                                     loggedInUser.isSignedIn ? <Dropdown>
                                                                 <Dropdown.Toggle variant="" id="dropdown-basic" className="d-flex align-items-center">
                                                                     <span className="avatar mr-2">
-                                                                        <img alt={loggedInUser.name} src={loggedInUser.photo}/>
+                                                                        <img alt={(loggedInUser.name.split(' '))[0]} src={loggedInUser.photo}/>
                                                                     </span>
-                                                                    <span className="mb-0 bold--17">{loggedInUser.name}</span>
+                                                                    <span className="mb-0 bold--17">{(loggedInUser.name.split(' '))[0]}</span>
                                                                 </Dropdown.Toggle>
 
                                                                 <Dropdown.Menu>
-                                                                    <Link to={`/my-orders/${loggedInUser.tokenId}`} className="dropdown-item lit--16">Manage Profile</Link>
-                                                                    <Link to={`/add-experience/${loggedInUser.name}`} className="dropdown-item lit--16">Share Experience</Link>
+                                                                    <Link to={`/my-posts/${(loggedInUser.name.toLowerCase().split(' '))[0]}`} className="dropdown-item lit--16">Manage My Posts</Link>
+                                                                    <Link to={`/add-experience/${(loggedInUser.name.toLowerCase().split(' '))[0]}`} className="dropdown-item lit--16">Share Experience</Link>
                                                                     <Link to="/" className="dropdown-item lit--16" onClick={logoutUser}>Sign Out</Link>
                                                                 </Dropdown.Menu>
                                                             </Dropdown> : 

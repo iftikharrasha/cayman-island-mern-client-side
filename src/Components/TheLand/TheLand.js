@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import phone from '../../img/phone.svg';
 import mail from '../../img/mail.svg';
 
-const About = () => {
+const TheLand = () => {
 
     return (
         <>
@@ -59,4 +59,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default TheLand;

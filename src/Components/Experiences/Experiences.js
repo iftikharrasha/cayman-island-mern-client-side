@@ -19,6 +19,8 @@ const Experiences = () => {
         });
     }, [page])
 
+    const experienceFiltered = experiences.filter(experience => experience.status === false || experience.status === undefined);
+
     return (
         <>
             <section className="offers py-5" id="offers">
@@ -28,7 +30,7 @@ const Experiences = () => {
                                 <h2 className="bold--40"> <strong>Travel Experiences</strong></h2>
                             </Col>
                             <div className="offer--cards">
-                                {experiences.map((experience) => (
+                                {experienceFiltered.map((experience) => (
                                     <SingleExp experience={experience} key={experience._id}/>
                                 ))}
                             </div>
