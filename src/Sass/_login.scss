@@ -26,24 +26,6 @@
                     padding-left: 0.9375rem;
                     top: 18px;
                 }
-                span{
-                    .i-wrong {
-                        position: absolute;
-                        padding-left: 0.9375rem;
-                        top: -2.8125rem;
-                        right: 0.75rem;
-                        color: red;
-                        font-size: 1.2rem;
-                    }
-                    .i-right {
-                        position: absolute;
-                        padding-left: 0.9375rem;
-                        top: -2.8125rem;
-                        right: 0.75rem;
-                        color: green;
-                        font-size: 1.2rem;
-                    }
-                }
                 .i-key {
                     position: absolute;
                     padding-left: 0.9375rem;
@@ -53,6 +35,26 @@
                     position: absolute;
                     padding-left: 0.9375rem;
                     top: 1.4375rem;
+                }
+                .validation{
+                    span{
+                        .i-wrong {
+                            position: absolute;
+                            padding-left: 0.9375rem;
+                            top: -2.8125rem;
+                            right: 0.75rem;
+                            color: red;
+                            font-size: 1.2rem;
+                        }
+                        .i-right {
+                            position: absolute;
+                            padding-left: 0.9375rem;
+                            top: -2.8125rem;
+                            right: 0.75rem;
+                            color: green;
+                            font-size: 1.2rem;
+                        }
+                    }
                 }
             }
             .signin-btn {

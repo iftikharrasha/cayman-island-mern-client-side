@@ -993,24 +993,6 @@
   top: 18px;
 }
 
-.login .login-form .form .input-field span .i-wrong {
-  position: absolute;
-  padding-left: 0.9375rem;
-  top: -2.8125rem;
-  right: 0.75rem;
-  color: red;
-  font-size: 1.2rem;
-}
-
-.login .login-form .form .input-field span .i-right {
-  position: absolute;
-  padding-left: 0.9375rem;
-  top: -2.8125rem;
-  right: 0.75rem;
-  color: green;
-  font-size: 1.2rem;
-}
-
 .login .login-form .form .input-field .i-key {
   position: absolute;
   padding-left: 0.9375rem;
@@ -1021,6 +1003,24 @@
   position: absolute;
   padding-left: 0.9375rem;
   top: 1.4375rem;
+}
+
+.login .login-form .form .input-field .validation span .i-wrong {
+  position: absolute;
+  padding-left: 0.9375rem;
+  top: -2.8125rem;
+  right: 0.75rem;
+  color: red;
+  font-size: 1.2rem;
+}
+
+.login .login-form .form .input-field .validation span .i-right {
+  position: absolute;
+  padding-left: 0.9375rem;
+  top: -2.8125rem;
+  right: 0.75rem;
+  color: green;
+  font-size: 1.2rem;
 }
 
 .login .login-form .form .signin-btn {

@@ -44,7 +44,6 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((res) => {
-                console.log(res.user);
                 const user = res.user;
                 const {displayName, email, accessToken} = user;
                 localStorage.setItem('token', accessToken);
@@ -138,7 +137,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://glacial-springs-97945.herokuapp.com/users-put', {
+        fetch('https://glacial-springs-97945.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

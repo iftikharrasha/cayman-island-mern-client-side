@@ -6,10 +6,10 @@ const Experiences = () => {
     const [experiences, setExperiences] = useState([]);
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
-    const size = 3;
+    const size = 10;
 
     useEffect(() => {
-        fetch(`https://glacial-springs-97945.herokuapp.com/all-experiences?page=${page}&&size=${size}`)
+        fetch(`https://glacial-springs-97945.herokuapp.com/all-experiences-with-page?page=${page}&&size=${size}`)
         .then(res => res.json())
         .then(data => {
             setExperiences(data.offers);

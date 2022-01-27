@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,8 @@ const SignUp = () => {
     const [loginData, setLoginData] = useState({});
     const { registerUser, signInWithGoogle, isLoading } = useAuth();
     const [newUser, setNewUser] = useState(false);
+    const [passMatcher, setPassMather] = useState('');
+    console.log('passMatcher:', passMatcher);
 
     const history = useHistory();
     const location = useLocation();
@@ -31,7 +33,29 @@ const SignUp = () => {
         let isFormValid;
 
         if(field === 'name'){
-            isFormValid = true;
+            const regexName = /^[a-zA-Z ]{2,30}$/;
+            const isNameOkay = regexName.test(value);
+            const isNameLength = value.length > 4;
+      
+            isFormValid = isNameLength && isNameOkay;
+
+            if(!isFormValid){
+                const wrapper = document.getElementById('valid-icon-name');
+                wrapper.innerHTML = '';
+                const span = document.createElement('span');
+                span.innerHTML = `
+                    <i class="fas fa-times-circle i-wrong" aria-hidden="true"></i>
+                `;
+                wrapper.appendChild(span);
+            }else{
+                const wrapper = document.getElementById('valid-icon-name');
+                wrapper.innerHTML = '';
+                const span = document.createElement('span');
+                span.innerHTML = `
+                    <i class="fas fa-check-circle i-right" aria-hidden="true"></i>
+                `;
+                wrapper.appendChild(span);
+            }
         }
 
         if(field === 'email'){
@@ -43,7 +67,7 @@ const SignUp = () => {
                 wrapper.innerHTML = '';
                 const span = document.createElement('span');
                 span.innerHTML = `
-                    <i className="fas fa-times-circle i-wrong" aria-hidden="true"></i>
+                    <i class="fas fa-times-circle i-wrong" aria-hidden="true"></i>
                 `;
                 wrapper.appendChild(span);
             }else{
@@ -51,7 +75,7 @@ const SignUp = () => {
                 wrapper.innerHTML = '';
                 const span = document.createElement('span');
                 span.innerHTML = `
-                    <i className="fas fa-check-circle i-right" aria-hidden="true"></i>
+                    <i class="fas fa-check-circle i-right" aria-hidden="true"></i>
                 `;
                 wrapper.appendChild(span);
             }
@@ -63,22 +87,50 @@ const SignUp = () => {
             const isPassLength = value.length > 5;
       
             isFormValid = isPassLength && isPassNumber;
-            // console.log(isFormValid);
 
             if(!isFormValid){
                 const wrapper = document.getElementById('valid-icon-pass');
                 wrapper.innerHTML = '';
                 const span = document.createElement('span');
                 span.innerHTML = `
-                    <i className="fas fa-times-circle i-wrong" aria-hidden="true"></i>
+                    <i class="fas fa-times-circle i-wrong" aria-hidden="true"></i>
                 `;
                 wrapper.appendChild(span);
             }else{
+                setPassMather(value);
                 const wrapper = document.getElementById('valid-icon-pass');
                 wrapper.innerHTML = '';
                 const span = document.createElement('span');
                 span.innerHTML = `
-                    <i className="fas fa-check-circle i-right" aria-hidden="true"></i>
+                    <i class="fas fa-check-circle i-right" aria-hidden="true"></i>
+                `;
+                wrapper.appendChild(span);
+            }
+        }
+      
+        if(field === 're-password'){
+            const regexPass = /\d{1}/;
+            const isPassNumber = regexPass.test(value);
+            const isPassLength = value.length > 5;
+            console.log(value);
+      
+            isFormValid = isPassLength && isPassNumber && passMatcher === value;
+            // console.log(isFormValid);
+
+            if(!isFormValid){
+                const wrapper = document.getElementById('valid-icon-re-pass');
+                wrapper.innerHTML = '';
+                const span = document.createElement('span');
+                span.innerHTML = `
+                    <i class="fas fa-times-circle i-wrong" aria-hidden="true"></i>
+                `;
+                wrapper.appendChild(span);
+            }else{
+                const wrapper = document.getElementById('valid-icon-re-pass');
+                wrapper.innerHTML = '';
+                const span = document.createElement('span');
+                span.innerHTML = `
+                    <i class="fas fa-check-circle i-right" aria-hidden="true"></i>
                 `;
                 wrapper.appendChild(span);
             }
@@ -108,11 +160,12 @@ const SignUp = () => {
                                 !isLoading && <form className="form" onSubmit={handleNormalAuth}>
                                         <div className="inputs my-4">
                                             <div className="input-field">
-                                                <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit-14" type="text" name="name" onChange={handleOnBlur} placeholder="Enter Your name" autoComplete="on" required/>
+                                                <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit-14" type="text" name="name" onChange={handleOnBlur} placeholder="Enter Your Full Name" autoComplete="on" required/>
                                                 <div className="input-icon">
                                                     <i className="fa fa-user-plus i-envelope" aria-hidden="true"></i>
                                                 </div>
-
+                                                {/* validation icon check */}
+                                                <div className="input-field validation" id="valid-icon-name"></div>
                                             </div>
                                             <div className="input-field my-3">
                                                 <input type="email" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="email" onChange={handleOnBlur} placeholder="Enter Your email" autoComplete="on" required/>
@@ -120,7 +173,7 @@ const SignUp = () => {
                                                     <i className="fa fa-envelope i-user" aria-hidden="true"></i>
                                                 </div>
                                                 {/* validation icon check */}
-                                                <div className="input-field" id="valid-icon-email"></div>
+                                                <div className="input-field validation" id="valid-icon-email"></div>
                                             </div>
                                             <div className="input-field my-3">
                                                 <input type="password" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="password" onChange={handleOnBlur} placeholder="Enter Password" autoComplete="on" required/>
@@ -128,13 +181,15 @@ const SignUp = () => {
                                                     <i className="fa fa-key i-key" aria-hidden="true"></i>
                                                 </div>
                                                 {/* validation icon check */}
-                                                <div className="input-field" id="valid-icon-pass"></div>
+                                                <div className="input-field validation" id="valid-icon-pass"></div>
                                             </div>
                                             <div className="input-field my-3">
-                                                <input type="password" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="re-password" placeholder="Confirm Password" autoComplete="on" required/>
+                                                <input type="password" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit-14" name="re-password" onChange={handleOnBlur} placeholder="Confirm Password" autoComplete="on" required/>
                                                 <div className="input-icon">
                                                     <i className="fa fa-key i-key" aria-hidden="true"></i>
                                                 </div>
+                                                {/* validation icon check */}
+                                                <div className="input-field validation" id="valid-icon-re-pass"></div>
                                             </div>
                                         </div>
                                         <div className="d-flex align-items-center justify-content-center">

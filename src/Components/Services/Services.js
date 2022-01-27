@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import camping from '../../img/camping.png';
 import guide from '../../img/guide.png';
@@ -7,8 +7,16 @@ import rides from '../../img/rides.png';
 import popular from '../../img/popular.png';
 import budget from '../../img/budget.png';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Services = () => {
+    // const [experiences, setExperiences] = useState([]);
+    // useEffect(() => {
+    //     fetch('https://glacial-springs-97945.herokuapp.com/all-experiences')
+    //     .then(res => res.json())
+    //     .then(data => setExperiences(data));
+    // }, [])
+
     const services = [
         {
             id: 1,

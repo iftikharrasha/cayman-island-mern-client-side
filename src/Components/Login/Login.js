@@ -32,6 +32,24 @@ const Login = () => {
         if(field === 'email'){
             const regexEm = /\S+@\S+\.\S+/;
             isFormValid = regexEm.test(value);
+
+            if(!isFormValid){
+                const wrapper = document.getElementById('valid-icon-email');
+                wrapper.innerHTML = '';
+                const span = document.createElement('span');
+                span.innerHTML = `
+                    <i class="fas fa-times-circle i-wrong" aria-hidden="true"></i>
+                `;
+                wrapper.appendChild(span);
+            }else{
+                const wrapper = document.getElementById('valid-icon-email');
+                wrapper.innerHTML = '';
+                const span = document.createElement('span');
+                span.innerHTML = `
+                    <i class="fas fa-check-circle i-right" aria-hidden="true"></i>
+                `;
+                wrapper.appendChild(span);
+            }
         }
       
         if(field === 'password'){
@@ -40,6 +58,24 @@ const Login = () => {
             const isPassLength = value.length > 5;
       
             isFormValid = isPassLength && isPassNumber;
+
+            if(!isFormValid){
+                const wrapper = document.getElementById('valid-icon-pass');
+                wrapper.innerHTML = '';
+                const span = document.createElement('span');
+                span.innerHTML = `
+                    <i class="fas fa-times-circle i-wrong" aria-hidden="true"></i>
+                `;
+                wrapper.appendChild(span);
+            }else{
+                const wrapper = document.getElementById('valid-icon-pass');
+                wrapper.innerHTML = '';
+                const span = document.createElement('span');
+                span.innerHTML = `
+                    <i class="fas fa-check-circle i-right" aria-hidden="true"></i>
+                `;
+                wrapper.appendChild(span);
+            }
         }
           
         if(isFormValid){
@@ -72,12 +108,16 @@ const Login = () => {
                                     <div className="input-icon">
                                         <i className="fa fa-envelope i-envelope" aria-hidden="true"></i>
                                     </div>
+                                    {/* validation icon check */}
+                                    <div className="input-field validation" id="valid-icon-email"></div>
                                 </div>
                                 <div className="input-field my-3">
                                     <input type="password" className="px-4 py-3 mt-1 mb-2 text-black border border-transparent rounded lit--14" name="password" onChange={handleOnBlur} placeholder="Enter Password" autoComplete="on" required/>
                                     <div className="input-icon">
                                         <i className="fa fa-key i-key" aria-hidden="true"></i>
                                     </div>
+                                    {/* validation icon check */}
+                                    <div className="input-field validation" id="valid-icon-pass"></div>
                                 </div>
                             </div>
                             <div className="d-flex align-items-center justify-content-center">
