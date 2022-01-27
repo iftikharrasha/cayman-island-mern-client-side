@@ -1378,6 +1378,7 @@
   list-style: none;
   line-height: 3.125rem;
   margin: 0 0.3125rem;
+  cursor: pointer;
 }
 
 .page-ul li .pageNumber {
@@ -1403,12 +1404,8 @@
           box-shadow: none;
 }
 
-.page-ul li .active a {
-  background: #383838;
-  color: #C4E7C9;
-  border-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+.page-ul .active .page-link {
+  background-color: #d831b2;
 }
 
 .page-ul .prev a, .page-ul .next a {

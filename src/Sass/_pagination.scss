@@ -6,6 +6,7 @@
       list-style: none;
       line-height: 3.125rem;
       margin: 0 0.3125rem;
+      cursor: pointer;
       .pageNumber {
         width: 3.125rem;
         height: 3.125rem;
@@ -27,13 +28,10 @@
           }
         }
       }
-      .active{
-        a {
-          background: #383838;
-          color: #C4E7C9;
-          border-color: transparent;
-          box-shadow: none;
-        }
+    }
+    .active{
+      .page-link{
+        background-color: #d831b2;
       }
     }
     .prev, .next{

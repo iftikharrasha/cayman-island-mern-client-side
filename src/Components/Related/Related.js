@@ -6,7 +6,7 @@ const Related = (props) => {
     const thisExp = props.experience;
     const [experiences, setExperiences] = useState([]);
     useEffect(() => {
-        fetch('https://glacial-springs-97945.herokuapp.com/all-offers')
+        fetch('https://glacial-springs-97945.herokuapp.com/all-experiences')
         .then(res => res.json())
         .then(data => setExperiences(data));
     }, [])

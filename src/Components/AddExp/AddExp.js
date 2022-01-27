@@ -38,7 +38,7 @@ const AddExp = () => {
         const location = locationRef.current.value;
 
         const newUser = {title, category, img, desc, price, location, addedBy, date};
-        fetch('https://glacial-springs-97945.herokuapp.com/add-offers', {
+        fetch('https://glacial-springs-97945.herokuapp.com/add-experience', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

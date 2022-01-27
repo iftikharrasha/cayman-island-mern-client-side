@@ -87,7 +87,7 @@ const ExpDetails = () => {
                     <div className="hero--top page--top">
                         <Row className="overflowX">
                             <Col md={6} className="pt-lg-0 pt-5 text-lg-left text-center mb-5">
-                                <img className="img-fluid banner" src={experience.img} alt={experience.key}/>
+                                <img className="img-fluid banner w-100" src={experience.img} alt={experience.key}/>
                             </Col>
 
                             <Col md={6}>
