@@ -5,6 +5,8 @@ import ReactStars from "react-rating-stars-component";
 import moment from 'moment';
 import useAuth from '../../hooks/useAuth';
 import Related from '../Related/Related';
+import { Link } from 'react-router-dom';
+import arrow from '../../img/arrow.svg';
 
 const ExpDetails = () => {
     const { orderId } = useParams();
@@ -108,11 +110,20 @@ const ExpDetails = () => {
                                         <h5 className="lit--16">{experience.location}</h5>
                                     </Col>
                                     
-                                    <Col loggedInUser={6}>
+                                    <Col className={6}>
                                         <p className="mt-4 bold--16">Added by:</p> 
                                         <h5 className="lit--16">{experience.addedBy}</h5>
                                     </Col>
                                 </Row>
+                            </Col>
+
+                            <Col md={12} className="mt-5 text-center share">
+                                <button className="btn bold--22">
+                                    <Link to={`/add-experience/${loggedInUser.name}`}>
+                                        Share Experience
+                                        <i className="fa fa-plus ml-2"></i>
+                                    </Link>
+                                </button>
                             </Col>
 
                             <Col lg={12}>

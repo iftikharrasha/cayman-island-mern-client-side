@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import google from '../../img/google.svg';
+import preloader from '../../img/preloader.gif';
 import useAuth from '../../hooks/useAuth';
 
 const SignUp = () => {
@@ -201,6 +202,12 @@ const SignUp = () => {
                                             </Link>
                                         </div>
                                     </form>
+                            }
+
+                            {
+                                isLoading &&    <div className="loader">
+                                                    <img src={preloader} alt={preloader} className="img-fluid"/>
+                                                </div>
                             }
                     </div>
                 </div>

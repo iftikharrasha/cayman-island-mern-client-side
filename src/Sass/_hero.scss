@@ -41,6 +41,28 @@
                     border-bottom: .1rem solid $color_purple;
                 }
             }
+            .slick-dots{
+                bottom: -25rem;
+                li {
+                    margin: 0 10px;
+                    button{
+                        border-radius: 50%;
+                        width: 15px;
+                        height: 15px;
+                        margin: 0 5px;
+                        opacity: .9;
+                        &::before {
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+                li.slick-active button{
+                    opacity: 1;
+                }
+                li.slick-active button:before{
+                    color: white;
+                }
+            }
         }
     }
 }

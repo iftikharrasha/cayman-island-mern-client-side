@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import google from '../../img/google.svg';
+import preloader from '../../img/preloader.gif';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
@@ -101,7 +102,8 @@ const Login = () => {
                                 </b>
                             </h2>
                         </div>
-                        <form className="form" onSubmit={handleNormalAuth}>
+                        {
+                        !isLoading && <form className="form" onSubmit={handleNormalAuth}>
                             <div className="inputs my-4">
                                 <div className="input-field">
                                     <input className="px-4 py-3 mb-2 text-black border border-transparent rounded lit--14" type="text" name="email" onChange={handleOnBlur} placeholder="Enter Email" autoComplete="on" required/>
@@ -129,6 +131,14 @@ const Login = () => {
                                 </Link>
                             </div>
                         </form>
+                        }
+                        
+
+                        {
+                            isLoading &&    <div className="loader">
+                                                <img src={preloader} alt={preloader} className="img-fluid"/>
+                                            </div>
+                        }
                     </div>
                 </div>
 

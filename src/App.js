@@ -21,8 +21,12 @@ import Explore from './Pages/Explore/Explore.js';
 import ExpDetails from './Components/ExpDetails/ExpDetails.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Sass/style.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 function App() {
+    AOS.init();
+    
     return (
         <div className="App">
 

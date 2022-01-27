@@ -157,6 +157,34 @@
   border-bottom: 0.1rem solid var(--color_purple);
 }
 
+.hero .hero--top .top .slick-dots {
+  bottom: -25rem;
+}
+
+.hero .hero--top .top .slick-dots li {
+  margin: 0 10px;
+}
+
+.hero .hero--top .top .slick-dots li button {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  opacity: .9;
+}
+
+.hero .hero--top .top .slick-dots li button::before {
+  font-size: 1.25rem;
+}
+
+.hero .hero--top .top .slick-dots li.slick-active button {
+  opacity: 1;
+}
+
+.hero .hero--top .top .slick-dots li.slick-active button:before {
+  color: white;
+}
+
 .services {
   border-radius: .75rem;
   padding: 1rem;
@@ -498,6 +526,17 @@
   .page .page--top p {
     font-size: .93rem;
   }
+}
+
+.page .share button {
+  border-width: 1px solid;
+  border-radius: 0.25rem;
+  padding: 0.75rem 2rem;
+  background-color: var(--color_darkblue);
+}
+
+.page .share button a {
+  color: #fff;
 }
 
 .orders {

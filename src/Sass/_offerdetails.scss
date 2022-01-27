@@ -90,4 +90,15 @@
             }
         }
     }
+    .share{
+        button{
+            border-width: 1px solid;
+            border-radius: 0.25rem;
+            padding: 0.75rem 2rem;
+            background-color: $color_darkblue;
+            a{
+                color: #fff;
+            }
+        }
+    }
 }
