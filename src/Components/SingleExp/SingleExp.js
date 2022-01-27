@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import arrow from '../../img/arrow.svg';
 
-const SingleOffer = (props) => {
-    const {img, title, _id, desc} = props.offer;
+const SingleExp = (props) => {
+    const {img, title, _id, desc} = props.experience;
 
     return (
         <>
@@ -26,4 +26,4 @@ const SingleOffer = (props) => {
     );
 };
 
-export default SingleOffer;
+export default SingleExp;

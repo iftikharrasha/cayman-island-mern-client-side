@@ -13,14 +13,14 @@ import Footer from './Components/Footer/Footer.js';
 import AuthProvider from './contexts/AuthProvider/AuthProvider.js';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute.js';
 import Home from './Pages/Home/Home.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Sass/style.css';
 import Signin from './Pages/Login/Signin.js';
 import Signup from './Pages/Signup/Signup.js';
 import About from './Pages/About/About.js';
 import NotFound from './Pages/NotFound/NotFound.js';
 import Explore from './Pages/Explore/Explore.js';
 import ExpDetails from './Components/ExpDetails/ExpDetails.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Sass/style.css';
 
 function App() {
     return (
@@ -49,16 +49,6 @@ function App() {
                                 <Route path="/explore">
                                     <Explore/>
                                 </Route>
-                                <PrivateRoute path="/all-orders">
-                                    <Header/>
-                                    <AllOrders/>
-                                    <Footer/>
-                                </PrivateRoute>
-                                <PrivateRoute path="/my-orders/:orderOwner">
-                                    <Header/>
-                                    <MyOrders/>
-                                    <Footer/>
-                                </PrivateRoute>
                                 <PrivateRoute path="/blog-details/:orderId">
                                     <Header/>
                                     <ExpDetails/>
@@ -67,6 +57,16 @@ function App() {
                                 <PrivateRoute path="/add-experience/:addedBy">
                                     <Header/>
                                     <AddExp/>
+                                    <Footer/>
+                                </PrivateRoute>
+                                <PrivateRoute path="/all-orders">
+                                    <Header/>
+                                    <AllOrders/>
+                                    <Footer/>
+                                </PrivateRoute>
+                                <PrivateRoute path="/my-orders/:orderOwner">
+                                    <Header/>
+                                    <MyOrders/>
                                     <Footer/>
                                 </PrivateRoute>
                                 <Route path="*">

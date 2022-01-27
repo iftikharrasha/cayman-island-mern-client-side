@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ReactStars from "react-rating-stars-component";
 import moment from 'moment';
 import useAuth from '../../hooks/useAuth';
+import Related from '../Related/Related';
 
 const ExpDetails = () => {
     const { orderId } = useParams();
@@ -74,7 +75,7 @@ const ExpDetails = () => {
 
     return (
         <>
-            <section className="hero page pb-5" id="home">
+            <section className="hero page pb-5" id="home" style={{minHeight: "auto"}}>
                 <Container className="c--custom">
                     <Row className="py-5">
                         <Col md={12} className="text-center">
@@ -85,31 +86,36 @@ const ExpDetails = () => {
                 <Container className="c--custom">
                     <div className="hero--top page--top">
                         <Row className="overflowX">
-                            <Col lg={12} className="pt-lg-0 pt-5 text-lg-left text-center mb-lg-5 mb-0">
+                            <Col md={6} className="pt-lg-0 pt-5 text-lg-left text-center mb-5">
                                 <img className="img-fluid banner" src={experience.img} alt={experience.key}/>
                             </Col>
-                            <Col lg={12}>
-                                <p className="mt-1 bold--16">Date Posted:{experience.date}</p> 
-                                <p className="my-1 mb-4 lit--16">Category: {experience.category}</p>
+
+                            <Col md={6}>
                                 <h4 className="lit--16">{experience.desc}</h4>
+                                <Row className=" mt-5">
+                                    <Col lg={6}>
+                                        <p className="mt-1 bold--16">Date Posted:{experience.date}</p> 
+                                        <p className="my-1 mb-4 lit--16">Category: {experience.category}</p>
+                                    </Col>
+
+                                    <Col lg={6}>
+                                        <p className="mt-4 bold--16">Price Starting from:</p> 
+                                        <h5 className="lit--16">{experience.price}$/Night</h5>
+                                    </Col>
+                                    
+                                    <Col lg={6}>
+                                        <p className="mt-4 bold--16">Location:</p> 
+                                        <h5 className="lit--16">{experience.location}</h5>
+                                    </Col>
+                                    
+                                    <Col loggedInUser={6}>
+                                        <p className="mt-4 bold--16">Added by:</p> 
+                                        <h5 className="lit--16">{experience.addedBy}</h5>
+                                    </Col>
+                                </Row>
                             </Col>
 
-                            <Col lg={3} sm={6}>
-                                <p className="mt-4 bold--16">Price Starting from:</p> 
-                                <h5 className="lit--16">{experience.price}$/Night</h5>
-                            </Col>
-                            
-                            <Col lg={3} sm={6}>
-                                <p className="mt-4 bold--16">Location:</p> 
-                                <h5 className="lit--16">{experience.location}</h5>
-                            </Col>
-                            
-                            <Col lg={3} sm={6}>
-                                <p className="mt-4 bold--16">Added by:</p> 
-                                <h5 className="lit--16">{experience.addedBy}</h5>
-                            </Col>
-
-                            <Col lg={12} className=" mt-5">
+                            <Col lg={12}>
                                 <h3 className="my-4 bold--30">Reviews: {reviews.length}</h3> 
                                 {reviews.map((review) => (
                                     <div className="comment__card" key={review._id}>
@@ -169,6 +175,8 @@ const ExpDetails = () => {
                     </div>
                 </div>
             </section>
+
+            <Related experience={experience} id={experience._id} key={experience._id}/>
         </>
     );
 };

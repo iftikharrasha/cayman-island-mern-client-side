@@ -4,11 +4,11 @@ import Pagination from '../Pagination/Pagination';
 import SingleExp from '../SingleExp/SingleExp';
 
 const AllExp = () => {
-    const [offers, setOffers] = useState([]);
+    const [experiences, setExperiences] = useState([]);
     useEffect(() => {
         fetch('https://glacial-springs-97945.herokuapp.com/all-offers')
         .then(res => res.json())
-        .then(data => setOffers(data));
+        .then(data => setExperiences(data));
     }, [])
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -48,21 +48,21 @@ const AllExp = () => {
                                 </Col>  
                                 <div className="offer--cards">
                                     {
-                                        offers.filter(offer => {
+                                        experiences.filter(experience => {
                                             if(searchTerm == ""){
-                                                return offer;
-                                            }else if(offer.category.toLowerCase().includes(searchTerm.toLowerCase()) || offer.title.toLowerCase().includes(searchTerm.toLowerCase())){
-                                                return offer;
+                                                return experience;
+                                            }else if(experience.category.toLowerCase().includes(searchTerm.toLowerCase()) || experience.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                                                return experience;
                                             }
-                                        }).slice(pagination.start,pagination.end).map(offer =>
-                                                <SingleExp offer={offer} key={offer._id}/>
+                                        }).slice(pagination.start,pagination.end).map(experience =>
+                                                <SingleExp experience={experience} key={experience._id}/>
                                             )
                                     }
                                 </div>
                             </Row>
                             <Row>
                                 <Col>
-                                    <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={offers.length}></Pagination>
+                                    <Pagination showPerPage={showPerPage} onPaginationChange={onPaginationChange} total={experiences.length}></Pagination>
                                 </Col>
                             </Row>
                     </div>
